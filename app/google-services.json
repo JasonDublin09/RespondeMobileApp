@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1080782644536",
+    "project_id": "responde-4d141",
+    "storage_bucket": "responde-4d141.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080782644536:android:308a84c714b68514438dcd",
+        "android_client_info": {
+          "package_name": "com.example.responde"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080782644536-uh5drneoc333alq7on5flho213h7hji0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8siQ2C-As5u1C5kBLL8F5csTeg0oiuJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1080782644536-uh5drneoc333alq7on5flho213h7hji0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
