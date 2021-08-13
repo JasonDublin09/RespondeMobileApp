@@ -39,7 +39,7 @@ private Button cancel_btn;
     }
 
     public void displayToastMsg(View v) {
-        toastMsg("Report Sent to the Fire District V ahehehehe");
+        toastMsg("Report Sent to the Fire District V");
     }
 
 }
