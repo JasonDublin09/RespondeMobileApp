@@ -1,45 +1,56 @@
 package com.example.responde;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.sax.StartElementListener;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class Homepage extends AppCompatActivity {
-private ImageButton myloc_btn;
-private ImageButton otherloc_btn;
+
+    private Object menuItem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-        otherloc_btn = (ImageButton) findViewById(R.id.otherloc_btn);
-        otherloc_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openotherloc();
-            }
-        });
-        myloc_btn = (ImageButton) findViewById(R.id.myloc_btn);
-        myloc_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openmy_location();
-            }
-        });
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigationbar);
 
-    }
+       bottomNavigationView.setSelectedItemId(R.id.home);
 
-    public void openmy_location(){
-        Intent intent = new Intent(this, my_location.class);
-        startActivity(intent);
-    }
-    public void openotherloc(){
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
+       bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+           @Override
+           public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+               switch (menuItem.getItemId()){
+                   case R.id.profile:
+                       startActivity(new Intent(getApplicationContext(),
+                               Profile.class));
+                       overridePendingTransition(0,0);
+                       return true;
+                   case R.id.whattodo:
+                       startActivity(new Intent(getApplicationContext(),
+                               DashBoard.class));
+                       overridePendingTransition(0,0);
+                       return true;
+                   case R.id.home:
+                       startActivity(new Intent(getApplicationContext(),
+                               Home.class));
+                       overridePendingTransition(0,0);
+                       return true;
+               }
+
+               return false;
+           }
+       });
+
+
+
     }
 }

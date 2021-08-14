@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Responde">
         <activity
+            android:name=".Profile"
+            android:exported="true" />
+        <activity
+            android:name=".Home"
+            android:exported="true" />
+        <activity
+            android:name=".DashBoard"
+            android:exported="true" />
+        <activity
             android:name=".my_location"
             android:exported="true" />
         <activity
