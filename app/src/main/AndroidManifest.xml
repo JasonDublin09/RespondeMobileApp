@@ -3,7 +3,7 @@
     package="com.example.responde">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Responde">
+        <activity
+            android:name=".Contacts"
+            android:exported="true" />
+        <activity
+            android:name=".Whattodo"
+            android:exported="true" />
+        <activity
+            android:name=".Profile"
+            android:exported="true" />
         <activity
             android:name=".my_location"
             android:exported="true" />
