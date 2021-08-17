@@ -13,6 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Responde">
         <activity
+            android:name=".welcomelastpage"
+            android:exported="true" />
+        <activity
+            android:name=".welcomereviewcontactlist"
+            android:exported="true" />
+        <activity
+            android:name=".welcomeaddcontact"
+            android:exported="true" />
+        <activity
+            android:name=".welcomecontactintro"
+            android:exported="true" />
+        <activity
+            android:name=".welcome_profile"
+            android:exported="true" />
+        <activity
+            android:name=".welcomepage"
+            android:exported="true" />
+        <activity
             android:name=".Contacts"
             android:exported="true" />
         <activity

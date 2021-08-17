@@ -11,12 +11,14 @@ import android.widget.Toast;
 
 public class my_location extends AppCompatActivity {
 private Button cancel_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_location);
 
         cancel_btn = (Button) findViewById(R.id.cancel_btn);
+
         cancel_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

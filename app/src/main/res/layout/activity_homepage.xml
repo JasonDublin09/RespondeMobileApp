@@ -27,6 +27,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             app:srcCompat="@drawable/otherloc"/>
+        <Button
+            android:id="@+id/shortroute"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
 
 
 

@@ -16,10 +16,23 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Homepage extends AppCompatActivity {
 private ImageButton myloc_btn;
 private ImageButton otherloc_btn;
+private Button shortcut_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+
+        shortcut_btn = (Button) findViewById(R.id.shortroute);
+
+        shortcut_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                my_location();
+            }
+        });
+
+
+
 
         otherloc_btn = (ImageButton) findViewById(R.id.otherloc_btn);
         otherloc_btn.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +41,8 @@ private ImageButton otherloc_btn;
                 openotherloc();
             }
         });
+
+
         myloc_btn = (ImageButton) findViewById(R.id.myloc_btn);
         myloc_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,5 +91,12 @@ private ImageButton otherloc_btn;
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
+
+    public void my_location(){
+        Intent intent = new Intent(this, welcomepage.class);
+        startActivity(intent);
+    }
+
+
 
 }
