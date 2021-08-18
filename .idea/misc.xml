@@ -6,6 +6,7 @@
         <entry key="..\:/Capstone/Repo/RespondeMobileApp/app/src/main/res/layout/activity_homepage.xml" value="0.2015625" />
         <entry key="..\:/Capstone/Repo/RespondeMobileApp/app/src/main/res/layout/activity_main.xml" value="0.2015625" />
         <entry key="..\:/Capstone/Repo/RespondeMobileApp/app/src/main/res/layout/activity_my_location.xml" value="0.2015625" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/drawable/ic_contacts.xml" value="0.2703125" />
         <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/drawable/ic_home.xml" value="0.2703125" />
         <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/drawable/ic_profile.xml" value="0.2703125" />
@@ -26,11 +27,26 @@
         <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/activity_whattodo.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/mylocation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/welcomepage.xml" value="0.2536231884057971" />
+=======
+        <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/activity_homepage.xml" value="0.264" />
+        <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <entry key="app/src/main/res/layout/activity_homepage.xml" value="0.3651041666666667" />
+=======
+        <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/activity_my_location.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/mylocation.xml" value="0.25416666666666665" />
+>>>>>>> 6b809021c2d68789acaf8583455829a8a5a7a0ad
+=======
+        <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/activity_my_location.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/mylocation.xml" value="0.25416666666666665" />
+>>>>>>> 6b809021c2d68789acaf8583455829a8a5a7a0ad
+>>>>>>> Stashed changes
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25885416666666666" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -3,7 +3,11 @@
     package="com.example.responde">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<<<<<<< Updated upstream
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+=======
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+>>>>>>> Stashed changes
 
     <application
         android:allowBackup="true"
@@ -13,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Responde">
         <activity
+<<<<<<< Updated upstream
             android:name=".welcomelastpage"
             android:exported="true" />
         <activity
@@ -43,6 +48,11 @@
             android:name=".my_location"
             android:exported="true" />
         <activity
+=======
+            android:name=".my_location"
+            android:exported="true" />
+        <activity
+>>>>>>> Stashed changes
             android:name=".Homepage"
             android:exported="true">
             <intent-filter>
