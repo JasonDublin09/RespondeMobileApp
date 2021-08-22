@@ -1,54 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_bg"
+    android:background="@drawable/general_bg"
 
     tools:context=".Homepage">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
 
-        <ImageButton
-            android:id="@+id/myloc_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/myloc" />
+    <ImageButton
+        android:id="@+id/myloc_btn"
+        android:layout_width="361dp"
+        android:layout_height="204dp"
 
-        <ImageButton
-            android:id="@+id/otherloc_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            app:srcCompat="@drawable/otherloc"/>
-        <Button
-            android:id="@+id/shortroute"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/homeaddress_btn" />
 
+    <ImageButton
+        android:id="@+id/otherloc_btn"
+        android:layout_width="361dp"
+        android:layout_height="205dp"
 
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="154dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/difflocation_btn" />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/shortroute"
+        android:layout_width="72dp"
+        android:layout_height="62dp"
+        android:layout_above="@+id/bottomnavigation"
+        android:layout_alignParentStart="true"
 
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="340dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="4dp"
+        android:src="@drawable/ic_my_location_btn" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigation"
+        app:itemIconSize="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:itemBackground="@color/colorPrimary"
+        app:itemBackground="@color/white"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation"
-
-
+        android:layout_alignParentBottom="true"
         />
 
 
-</FrameLayout>
+</RelativeLayout>

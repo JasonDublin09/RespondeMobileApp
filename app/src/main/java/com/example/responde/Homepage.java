@@ -16,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Homepage extends AppCompatActivity {
 private ImageButton myloc_btn;
 private ImageButton otherloc_btn;
-private Button shortcut_btn;
+private Button shortcut_btn,splashscreen_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +30,6 @@ private Button shortcut_btn;
                 my_location();
             }
         });
-
-
 
 
         otherloc_btn = (ImageButton) findViewById(R.id.otherloc_btn);
@@ -96,6 +94,7 @@ private Button shortcut_btn;
         Intent intent = new Intent(this, welcomepage.class);
         startActivity(intent);
     }
+
 
 
 

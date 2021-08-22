@@ -4,26 +4,26 @@
     <item
         android:id="@+id/profile"
         android:title="profile"
-        android:icon="@drawable/ic_profile"
+        android:icon="@drawable/ic_profile_final"
 
         />
 
     <item
         android:id="@+id/whattodo"
         android:title="whattodo"
-        android:icon="@drawable/ic_whattodo"
+        android:icon="@drawable/ic_whattodo_final"
 
         />
     <item
         android:id="@+id/home"
         android:title="home"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_home_final"
 
         />
     <item
         android:id="@+id/contacts"
         android:title="contacts"
-        android:icon="@drawable/ic_contacts"
+        android:icon="@drawable/ic_contacts_final"
 
         />
 
