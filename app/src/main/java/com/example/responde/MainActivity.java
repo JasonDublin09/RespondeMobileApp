@@ -38,7 +38,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextInputLayout userName, userContact;
+    TextInputLayout userName, userContact, userEmail;
     Button confirmBtn, gpslocator;
 
     FirebaseDatabase rootNode;
@@ -58,10 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         userName = findViewById(R.id.name);
         userContact = findViewById(R.id.contactNum);
         userAddress = findViewById(R.id.home);
+        userEmail = findViewById(R.id.email);
         confirmBtn = findViewById(R.id.confirm);
         gpslocator = findViewById(R.id.gps_locator);
-
-
 
         //Firebase confirm button
         confirmBtn.setOnClickListener(this);
@@ -79,8 +78,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String name = userName.getEditText().getText().toString();
                 String contact = userContact.getEditText().getText().toString();
                 String address = userAddress.getText().toString();
+                String email = userEmail.getEditText().toString();
 
-                UserHelperClass helperClass = new UserHelperClass(name, contact, address);
+                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address);
                 reference.child(name).setValue(helperClass);
                 Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
                 break;
@@ -136,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             e.printStackTrace();
                         }
 
-
                     } else {
                         //when location is not null
                         //ini location request
@@ -181,6 +180,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-
-
 }
