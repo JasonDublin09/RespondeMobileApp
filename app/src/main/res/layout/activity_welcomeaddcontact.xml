@@ -49,21 +49,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/welcomeaddcontacttextview"
-        android:hint="ex: 0915726890"
-        android:textAlignment="center"
         android:layout_centerInParent="true"
         android:ems="10"
-        android:inputType="phone" />
+        android:hint="ex: 0915726890"
+        android:inputType="phone"
+        android:textAlignment="center" />
+
     <EditText
-        android:id="@+id/welcomeeaddcontactname"
+        android:id="@+id/nameContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/welcomeeaddcontactnum"
-        android:hint="ex: Juan Dela Cruz"
-        android:textAlignment="center"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="238dp"
+        android:layout_marginBottom="448dp"
         android:ems="10"
-        android:inputType="phone" />
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="#7CFFFFFF" />
 
 
 </RelativeLayout>

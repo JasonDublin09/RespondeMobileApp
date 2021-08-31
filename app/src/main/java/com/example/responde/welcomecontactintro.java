@@ -26,8 +26,6 @@ public class welcomecontactintro extends AppCompatActivity {
             }
         });
 
-
-
     }
     public boolean onTouchEvent(android.view.MotionEvent touchEvent){
         switch(touchEvent.getAction()){

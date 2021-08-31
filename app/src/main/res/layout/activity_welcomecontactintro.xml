@@ -8,24 +8,16 @@
     tools:context=".welcomecontactintro">
 
 
-    <TextView
-        android:id="@+id/contacttextview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:text="Contact List Page intro"
-        android:textAlignment="center"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"
-        />
-
     <Button
         android:id="@+id/welcomeaddcontact_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/contacttextview"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
+        android:layout_marginStart="131dp"
+        android:layout_marginEnd="139dp"
         android:text="Add contact" />
 
 </RelativeLayout>

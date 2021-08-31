@@ -31,7 +31,6 @@ private Button shortcut_btn,splashscreen_btn;
             }
         });
 
-
         otherloc_btn = (ImageButton) findViewById(R.id.otherloc_btn);
         otherloc_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +38,6 @@ private Button shortcut_btn,splashscreen_btn;
                 openotherloc();
             }
         });
-
 
         myloc_btn = (ImageButton) findViewById(R.id.myloc_btn);
         myloc_btn.setOnClickListener(new View.OnClickListener() {
@@ -76,9 +74,6 @@ private Button shortcut_btn,splashscreen_btn;
                 return false;
             }
         });
-
-
-
     }
 
     public void openmy_location(){
@@ -94,8 +89,5 @@ private Button shortcut_btn,splashscreen_btn;
         Intent intent = new Intent(this, welcomepage.class);
         startActivity(intent);
     }
-
-
-
 
 }
