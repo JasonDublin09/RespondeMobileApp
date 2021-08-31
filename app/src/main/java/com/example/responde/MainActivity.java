@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.confirm:
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("users");
+                reference = rootNode.getReference("User");
 
                 //get all the value
                 String name = userName.getEditText().getText().toString();
