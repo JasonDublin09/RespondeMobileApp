@@ -157,7 +157,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     List<Address> addresses = geocoder.getFromLocation(
                                             location1.getLatitude(), location1.getLongitude(), 1
                                     );
-
                                     //set address
                                     userAddress.setText(String.valueOf(addresses.get(0).getAddressLine(0)));
                                 } catch (IOException e) {
@@ -178,6 +177,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
-
     }
 }

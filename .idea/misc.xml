@@ -31,14 +31,17 @@
         <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/activity_whattodo.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/mylocation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/njra0/Documents/GitHub/RespondeMobileApp/app/src/main/res/layout/welcomepage.xml" value="0.2536231884057971" />
+        <entry key="app/src/main/res/layout/activity_contacts.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/activity_homepage.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25885416666666666" />
         <entry key="app/src/main/res/layout/activity_my_location.xml" value="0.3380208333333333" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.22864583333333333" />
         <entry key="app/src/main/res/layout/activity_welcome_profile.xml" value="0.3380208333333333" />
         <entry key="app/src/main/res/layout/activity_welcomeaddcontact.xml" value="0.3651041666666667" />
         <entry key="app/src/main/res/layout/activity_welcomecontactintro.xml" value="0.3651041666666667" />
         <entry key="app/src/main/res/layout/activity_welcomelastpage.xml" value="0.3380208333333333" />
+        <entry key="app/src/main/res/layout/activity_whattodo.xml" value="0.22864583333333333" />
       </map>
     </option>
   </component>
