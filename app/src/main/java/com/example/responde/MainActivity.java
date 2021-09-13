@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FusedLocationProviderClient fusedLocationProviderClient;
     TextView userAddress;
 
+    Double lat,lng;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +82,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String address = userAddress.getText().toString();
                 String email = userEmail.getEditText().toString();
 
-                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address);
-                reference.child(name).setValue(helperClass);
+
+                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng);
+                reference.push().setValue(helperClass);
                 Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.gps_locator:
@@ -131,6 +134,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     location.getLatitude(),location.getLongitude(),1
                             );
 
+                            lat=location.getLatitude();
+                            lng=location.getLongitude();
                             userAddress.setText(String.valueOf(addresses.get(0).getAddressLine(0)));
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -158,6 +163,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                             location1.getLatitude(), location1.getLongitude(), 1
                                     );
                                     //set address
+                                    lat=location.getLatitude();
+                                    lng=location.getLongitude();
                                     userAddress.setText(String.valueOf(addresses.get(0).getAddressLine(0)));
                                 } catch (IOException e) {
                                     e.printStackTrace();

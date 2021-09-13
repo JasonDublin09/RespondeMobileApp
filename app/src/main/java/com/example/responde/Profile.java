@@ -1,62 +1,86 @@
 package com.example.responde;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Looper;
+import android.provider.Settings;
 import android.view.MenuItem;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
-public class Profile extends AppCompatActivity {
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
-        TextView name, eMail, contact, address;
-        DatabaseReference reference;
-        Button update;
+public class Profile extends AppCompatActivity implements View.OnClickListener{
+
+
+    private EditText name,contact;
+    private TextView address;
+    String eMail= null;
+    private String _name,_contact,_address;
+    SharedPreferences sharedPreferences;
+    FusedLocationProviderClient fusedLocationProviderClient;
+    Double lat,lng;
+
+    String userName;
+    DatabaseReference reference;
+    private Button button1,button2;
+
+    public static final String SHARED_PREFS= "sharedPrefs";
+    public static final String NAME= "name";
+    public static final String ADDRESS= "address";
+    public static final String CONTACT= "contact";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        //ini fusedLocationProvider
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(Profile.this);
 
-        name = (TextView)findViewById(R.id.name);
-        eMail = (TextView)findViewById(R.id.email);
-        contact = (TextView)findViewById(R.id.contact);
-        address = (TextView)findViewById(R.id.homeAdd);
-        update = findViewById(R.id.updateBtn);
+        name = (EditText) findViewById(R.id.name1);
+        eMail = null;
+        contact = findViewById(R.id.contact1);
+        address = null;
+        button1 = (Button) findViewById(R.id.updateBtn);
+        button2 = (Button) findViewById(R.id.getlcn);
+        address = findViewById(R.id.address);
 
-        reference = FirebaseDatabase.getInstance().getReference().child("User").child("09954528389");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
 
-                String dbName = dataSnapshot.child("name").getValue().toString();
-                String dbEmail = dataSnapshot.child("email").getValue().toString();
-                String dbContact = dataSnapshot.child("contact").getValue().toString();
-                String dbHome = dataSnapshot.child("home").getValue().toString();
-                name.setText(dbName);
-                eMail.setText(dbEmail);
-                contact.setText(dbContact);
-                address.setText(dbHome);
 
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
 
 
 
@@ -87,5 +111,144 @@ public class Profile extends AppCompatActivity {
                 return false;
             }
         });
+
+
+
+
+
+        loadData();
+        updateViews();
+    }
+
+    private void updatebutton() {
+
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+
+        editor.putString(NAME, name.getText().toString());
+        editor.putString(CONTACT, contact.getText().toString());
+        editor.apply();
+        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
+
+    }
+    public void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        _name= sharedPreferences.getString(NAME,"");
+        _contact= sharedPreferences.getString(CONTACT,"");
+
+
+    }
+    public void updateViews(){
+        name.setText(_name);
+        contact.setText(_contact);
+    }
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.updateBtn:
+                updatebutton();
+                break;
+            case R.id.getlcn:
+                Toast.makeText(getApplicationContext(),"Test", Toast.LENGTH_SHORT).show();
+                if (ActivityCompat.checkSelfPermission(Profile.this,
+                        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Profile.this,
+                        Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    //When Permission Granted
+                    getCurrentLocation();
+                } else {
+                    //when permission is not granted
+                    //req permission
+                    ActivityCompat.requestPermissions(Profile.this
+                            , new String[]{Manifest.permission.ACCESS_FINE_LOCATION
+                                    , Manifest.permission.ACCESS_COARSE_LOCATION}
+                            , 100);
+                }
+        }
+    }
+    @SuppressLint("MissingPermission")
+    private void getCurrentLocation() {
+        //ini location manager
+        LocationManager locationManager = (LocationManager) getSystemService(
+                Context.LOCATION_SERVICE
+        );
+        //check Condition
+        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+                || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+            //When location service is ena
+            //get last location
+            fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+                @Override
+                public void onComplete(@NonNull Task<Location> task) {
+                    //ini location
+
+                    Location location = task.getResult();
+                    //check condition
+                    if (location == null) {
+                        //when location is null
+                        try {
+                            //ini geocoder
+                            Geocoder geocoder= new Geocoder(Profile.this,
+                                    Locale.getDefault());
+                            //get address
+                            List<Address> addresses = geocoder.getFromLocation(
+                                    location.getLatitude(),location.getLongitude(),1
+                            );
+
+                            address.setText(String.valueOf(addresses.get(0).getAddressLine(0)));
+                            lat= location.getLatitude();
+                            lng= location.getLongitude();
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    } else {
+                        //when location is not null
+                        //ini location request
+                        LocationRequest locationRequest = new LocationRequest()
+                                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                                .setInterval(10000)
+                                .setFastestInterval(1000)
+                                .setNumUpdates(1);
+                        //ini location callback
+                        LocationCallback locationCallback= new LocationCallback() {
+                            @Override
+                            public void onLocationResult(@NonNull LocationResult locationResult) {
+                                Location location1 = locationResult.getLastLocation();
+                                try {
+                                    //ini geocoder
+                                    Geocoder geocoder = new Geocoder(Profile.this,
+                                            Locale.getDefault());
+                                    //get address
+                                    List<Address> addresses = geocoder.getFromLocation(
+                                            location1.getLatitude(), location1.getLongitude(), 1
+                                    );
+
+                                    //set address
+                                    address.setText(String.valueOf(addresses.get(0).getAddressLine(0)));
+                                    lat= location.getLatitude();
+                                    lng= location.getLongitude();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        };
+                        //request location updates
+                        fusedLocationProviderClient.requestLocationUpdates(locationRequest,
+                                locationCallback, Looper.myLooper());
+                    }
+                }
+            });
+        } else {
+            //when location service is not ena
+            //open location settings
+            Toast.makeText(getApplicationContext(), "Please Enable Location", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        }
+
     }
 }
+
+
+
+

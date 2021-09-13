@@ -26,6 +26,8 @@ public class welcome_profile extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     float x1, x2, y1, y2;
+    Double lat,lng;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ public class welcome_profile extends AppCompatActivity {
         address = findViewById(R.id.address);
         email = findViewById(R.id.email);
         confirm = findViewById(R.id.save);
+        lat=null;
+        lng=null;
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +61,7 @@ public class welcome_profile extends AppCompatActivity {
                     String contacts = contact.getEditText().getText().toString();
                     String emails = email.getEditText().getText().toString();
                     String addresses = address.getEditText().getText().toString();
-                    UserHelperClass helperClass = new UserHelperClass(names, contacts, emails, addresses);
+                    UserHelperClass helperClass = new UserHelperClass(names, contacts, emails, addresses,lat,lng);
                     reference.child(contacts).setValue(helperClass);
                 }
             }

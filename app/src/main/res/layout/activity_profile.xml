@@ -20,50 +20,73 @@
         />
 
     <Button
+        android:id="@+id/getlcn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="439dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="244dp"
+        android:text="Get Location" />
+
+    <Button
         android:id="@+id/updateBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="546dp"
-        android:layout_marginBottom="137dp"
+        android:layout_marginTop="559dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="124dp"
         android:text="Update" />
 
-    <TextView
-        android:id="@+id/homeAdd"
+    <EditText
+        android:id="@+id/name1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        android:text="Address"
-        android:textColor="#000000" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="564dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/contact1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="490dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Contact Number" />
 
     <TextView
-        android:id="@+id/contact"
-        android:layout_width="wrap_content"
+        android:id="@+id/address"
+        android:layout_width="281dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="241dp"
-        android:text="contact"
-        android:textColor="#000000" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="377dp"
+
+        android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView"
+        android:layout_width="281dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="187dp"
-        android:text="email"
-        android:textColor="#000000" />
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="131dp"
-        android:text="name"
-        android:textColor="#000000" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="425dp"
+        android:text="Address:"
+        android:textSize="20sp" />
 
 </RelativeLayout>
