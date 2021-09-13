@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String name = userName.getEditText().getText().toString();
                 String contact = userContact.getEditText().getText().toString();
                 String address = userAddress.getText().toString();
-                String email = userEmail.getEditText().toString();
+                String email = "@aaa";
 
 
                 UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng);
