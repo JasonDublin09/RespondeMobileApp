@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextInputLayout userName, userContact;
     Button confirmBtn, gpslocator;
+    Double lat,lng;
+
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -62,10 +64,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gpslocator = findViewById(R.id.gps_locator);
 
 
-
         //Firebase confirm button
         confirmBtn.setOnClickListener(this);
         gpslocator.setOnClickListener(this);
+
     }
 
     @Override
@@ -79,9 +81,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String name = userName.getEditText().getText().toString();
                 String contact = userContact.getEditText().getText().toString();
                 String address = userAddress.getText().toString();
+               // String email = userEmail.getEditText().toString();
+                String email = "@aaa";
 
-                UserHelperClass helperClass = new UserHelperClass(name, contact, address);
-                reference.child(name).setValue(helperClass);
+
+                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng);
+                reference.push().setValue(helperClass);
                 Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.gps_locator:
@@ -132,6 +137,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             );
 
                             userAddress.setText(String.valueOf(addresses.get(0).getAddressLine(0)));
+                            lat= location.getLatitude();
+                            lng= location.getLongitude();
+
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -161,6 +169,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                                     //set address
                                     userAddress.setText(String.valueOf(addresses.get(0).getAddressLine(0)));
+                                    lat= location.getLatitude();
+                                    lng= location.getLongitude();
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
