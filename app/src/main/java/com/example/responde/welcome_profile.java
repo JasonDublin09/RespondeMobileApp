@@ -64,6 +64,9 @@ public class welcome_profile extends AppCompatActivity {
                     UserHelperClass helperClass = new UserHelperClass(names, contacts, emails, addresses,lat,lng);
                     reference.child(contacts).setValue(helperClass);
                 }
+                startActivity(new Intent(welcome_profile.this, welcomeaddcontact.class));
+
+
             }
         });
     }

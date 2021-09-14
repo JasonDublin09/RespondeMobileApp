@@ -7,12 +7,22 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Responde">
-
+        <activity
+            android:name=".During_UI"
+            android:exported="true" />
+        <activity
+            android:name=".after_UI"
+            android:exported="true" />
+        <activity
+            android:name=".beforeUI"
+            android:exported="true" />
         <activity
             android:name=".welcomelastpage"
             android:exported="true" />
@@ -36,16 +46,14 @@
             android:exported="true" />
         <activity
             android:name=".Whattodo"
-            android:exported="true" />
+            android:hardwareAccelerated="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Profile"
             android:exported="true" />
         <activity
             android:name=".my_location"
             android:exported="true" />
-
-
-
         <activity
             android:name=".splash_screen"
             android:exported="true">
@@ -55,12 +63,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".Homepage"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

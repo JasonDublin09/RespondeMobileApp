@@ -6,16 +6,43 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Whattodo extends AppCompatActivity {
+
+    ImageView buttonAfter, buttonBefore, buttonDuring;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_whattodo);
 
+        buttonAfter = findViewById(R.id.after);
+        buttonBefore = findViewById(R.id.before);
+        buttonDuring = findViewById(R.id.during);
+
+        buttonBefore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Whattodo.this, beforeUI.class));
+            }
+        });
+
+        buttonDuring.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Whattodo.this, During_UI.class));
+            }
+        });
+        buttonAfter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Whattodo.this, after_UI.class));
+            }
+        });
         //Initialize and assign variables
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
         //Set Tab selected
@@ -43,6 +70,5 @@ public class Whattodo extends AppCompatActivity {
                 return false;
             }
         });
-
     }
 }

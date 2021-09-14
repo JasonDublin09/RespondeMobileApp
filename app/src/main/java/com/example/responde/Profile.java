@@ -112,10 +112,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
             }
         });
 
-
-
-
-
         loadData();
         updateViews();
     }
@@ -134,8 +130,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         _name= sharedPreferences.getString(NAME,"");
         _contact= sharedPreferences.getString(CONTACT,"");
-
-
     }
     public void updateViews(){
         name.setText(_name);

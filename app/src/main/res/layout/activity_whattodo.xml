@@ -7,27 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".Whattodo">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:text="WAT TO DO FAK"
-        android:textSize="50dp"
-        android:textStyle="bold" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigation"
-        app:itemIconSize="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         app:itemBackground="@color/white"
-        app:itemTextColor="@drawable/selector"
+        app:itemIconSize="50dp"
         app:itemIconTint="@drawable/selector"
-        app:menu="@menu/menu_navigation"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_navigation" />
+
+    <ImageView
+        android:id="@+id/before"
+        android:layout_width="403dp"
+        android:layout_height="202dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="518dp"
+        app:srcCompat="@drawable/before_resized" />
 
+    <ImageView
+        android:id="@+id/during"
+        android:layout_width="411dp"
+        android:layout_height="203dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="223dp"
+        android:layout_marginBottom="305dp"
+        app:srcCompat="@drawable/during_resized" />
 
-        />
+    <ImageView
+        android:id="@+id/after"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="437dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="92dp"
+        app:srcCompat="@drawable/after_resized" />
+
 </RelativeLayout>

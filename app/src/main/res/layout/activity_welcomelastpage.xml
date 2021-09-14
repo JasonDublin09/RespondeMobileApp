@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:text="FINAL PAGE OF WELCOME HATDOG"
+        android:text="We are all set!"
         android:textAlignment="center"
         android:textSize="50dp"
         android:textStyle="bold"
