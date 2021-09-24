@@ -80,10 +80,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
 
-
-
-
-
         //Initialize and assign variables
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
         //Set Tab selected

@@ -81,4 +81,33 @@
             android:hint="e-mail" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="559dp"
+        android:layout_marginEnd="259dp"
+        android:layout_marginBottom="124dp"
+        android:text="CheckBox" />
+
+    <TextView
+        android:id="@+id/tAnda"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="573dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="139dp"
+        android:text="Terms and Agreement" />
+
 </RelativeLayout>

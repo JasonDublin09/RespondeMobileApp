@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -22,12 +24,13 @@ import com.google.firebase.database.ValueEventListener;
 public class welcome_profile extends AppCompatActivity {
 
     TextInputLayout name, contact, email, address;
+    CheckBox termsAndAgreement;
+    TextView ta;
     Button confirm;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     float x1, x2, y1, y2;
     Double lat,lng;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,8 @@ public class welcome_profile extends AppCompatActivity {
         address = findViewById(R.id.address);
         email = findViewById(R.id.email);
         confirm = findViewById(R.id.save);
+        ta = findViewById(R.id.tAnda);
+        termsAndAgreement = findViewById(R.id.checkbox);
         lat=null;
         lng=null;
 
@@ -55,20 +60,29 @@ public class welcome_profile extends AppCompatActivity {
                 if (!validation() | !validateContact() | !validateEmail() | !validateAddress()) {
                     return;
                 }
-                else {
-                    //get all the values
+
+               else {
+               //get all the values
                     String names = name.getEditText().getText().toString();
                     String contacts = contact.getEditText().getText().toString();
                     String emails = email.getEditText().getText().toString();
                     String addresses = address.getEditText().getText().toString();
-                    UserHelperClass helperClass = new UserHelperClass(names, contacts, emails, addresses,lat,lng);
+
+                    UserHelperClass helperClass = new UserHelperClass(names, contacts, emails, addresses, lat, lng);
                     reference.child(contacts).setValue(helperClass);
-                }
-                startActivity(new Intent(welcome_profile.this, welcomeaddcontact.class));
-
-
+                    startActivity(new Intent(welcome_profile.this, welcomecontactintro.class));
+                    }
             }
         });
+    }
+
+    public Boolean terms() {
+        if (termsAndAgreement.isChecked()) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public Boolean validation() {

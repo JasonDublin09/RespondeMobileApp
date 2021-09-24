@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Responde">
         <activity
+            android:name=".TermsandAgreement"
+            android:exported="true" />
+        <activity
             android:name=".During_UI"
             android:exported="true" />
         <activity
