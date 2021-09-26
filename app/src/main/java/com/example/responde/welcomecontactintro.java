@@ -38,11 +38,11 @@ public class welcomecontactintro extends AppCompatActivity {
                 y2 = touchEvent.getY();
                 //swipe left
                 if(x1 > x2){
-                    Intent i = new Intent(welcomecontactintro.this, welcome_profile.class);
+                    Intent i = new Intent(welcomecontactintro.this, welcomelastpage.class);
                     startActivity(i);
                     //swipe right
                 }else if(x1 < x2){
-                    Intent i = new Intent(welcomecontactintro.this, welcomecontactintro.class);
+                    Intent i = new Intent(welcomecontactintro.this, welcome_profile.class);
                     startActivity(i);
                 }
                 break;

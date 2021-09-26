@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/general_bg"
     tools:context=".Profile">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -23,24 +24,16 @@
         android:id="@+id/getlcn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="439dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="244dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
         android:text="Get Location" />
 
     <Button
         android:id="@+id/updateBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="559dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="124dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
         android:text="Update" />
 
     <EditText

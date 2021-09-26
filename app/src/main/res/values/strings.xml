@@ -9,4 +9,5 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="whattodobefore_string">\nexample1\nexample2\nexample3\nexample4\nexample5\nexample6\nexample7\nexample8\nexample9\nexample10\nexample11\nexample12</string>
 </resources>
