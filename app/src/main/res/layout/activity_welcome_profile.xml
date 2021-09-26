@@ -10,52 +10,91 @@
     >
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:background="@drawable/gradient"
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
+        android:hint="Name"
+        android:capitalize="words"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:startIconDrawable="@drawable/ic_person"
         >
-
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameedit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:background="@drawable/gradient"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:capitalize="words"
-            android:hint="Name"
-            android:shadowColor="#6A855C" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:hint="Contact"
+            app:startIconDrawable="@drawable/ic_contacts"
+            app:prefixText="+63"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            app:helperText="Example: 9211098876"
+            app:helperTextTextColor="@color/black"
+            app:prefixTextColor="@color/black"
+       >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contactedit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/contact"
+        <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-       >
-
+        android:layout_marginTop="400dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:background="@drawable/gradient"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center_horizontal"
+        app:startIconDrawable="@drawable/ic_baseline_email_24"
+        >
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailedit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="Contact" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:hint="e-mail" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+
+        <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
-        >
-
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:background="@drawable/gradient"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center_horizontal"
+        android:hint="Home Address"
+        app:startIconDrawable="@drawable/ic_home"
+            >
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addressedit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="Home Address" />
-    </com.google.android.material.textfield.TextInputLayout>
+
+            />
+        </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/save"
@@ -65,49 +104,22 @@
         android:layout_marginTop="600dp"
         android:text="Confirm" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="e-mail" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
         android:id="@+id/checkbox"
-        android:layout_width="132dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="559dp"
-        android:layout_marginEnd="259dp"
-        android:layout_marginBottom="124dp"
-        android:text="CheckBox" />
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/address"
+        android:layout_marginLeft="20dp" />
 
     <TextView
         android:id="@+id/tAnda"
-        android:layout_width="194dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="573dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginBottom="139dp"
+        android:layout_toRightOf="@+id/checkbox"
+        android:layout_below="@+id/address"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white"
         android:text="Terms and Agreement" />
 
 </RelativeLayout>
