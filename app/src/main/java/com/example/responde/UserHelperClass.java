@@ -55,6 +55,7 @@ public class UserHelperClass {
         this.home = home;
     }
     public Double getLat(){
+
         return lat;
     }
 
@@ -63,7 +64,7 @@ public class UserHelperClass {
         this.lat = lat;
     }
     public Double getLng(){
-        return lat;
+        return lng;
     }
 
     public void setLng(Double lng) {
