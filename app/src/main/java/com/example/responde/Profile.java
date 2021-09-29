@@ -46,10 +46,11 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
     private EditText name,contact;
     private TextView address;
     String eMail= null;
-    private String _name,_contact,_address;
+    public String _name,_contact,_address;
     SharedPreferences sharedPreferences;
     FusedLocationProviderClient fusedLocationProviderClient;
     Double lat,lng;
+    String date;
 
     String userName;
     DatabaseReference reference;

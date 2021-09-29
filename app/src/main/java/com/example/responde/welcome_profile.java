@@ -31,7 +31,7 @@ public class welcome_profile extends AppCompatActivity {
     DatabaseReference reference;
     float x1, x2, y1, y2;
     Double lat,lng;
-    String status;
+    String status,date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class welcome_profile extends AppCompatActivity {
         lat=null;
         lng=null;
         status="HOME";
+        date="";
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +71,7 @@ public class welcome_profile extends AppCompatActivity {
                     String emails = email.getEditText().getText().toString();
                     String addresses = address.getEditText().getText().toString();
 
-                    UserHelperClass helperClass = new UserHelperClass(names, contacts, emails, addresses, lat, lng,status);
+                    UserHelperClass helperClass = new UserHelperClass(names, contacts, emails, addresses, lat, lng,status,date);
                     reference.child(contacts).setValue(helperClass);
                     startActivity(new Intent(welcome_profile.this, welcomecontactintro.class));
                     }

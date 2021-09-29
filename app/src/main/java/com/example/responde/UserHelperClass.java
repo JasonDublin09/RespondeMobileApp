@@ -2,13 +2,13 @@ package com.example.responde;
 
 public class UserHelperClass {
 
-    String name, contact, email, home,status;
+    String name, contact, email, home,status,date;
     Double lat,lng;
 
     public UserHelperClass() {
     }
 
-    public UserHelperClass(String name, String contact, String email, String home, Double lat, Double lng, String status) {
+    public UserHelperClass(String name, String contact, String email, String home, Double lat, Double lng, String status,String date) {
         this.name = name;
         this.contact = contact;
         this.email = email;
@@ -16,6 +16,7 @@ public class UserHelperClass {
         this.lat = lat;
         this.lng = lng;
         this.status = status;
+        this.date = date;
     }
 
     public String getName() {
@@ -79,6 +80,11 @@ public class UserHelperClass {
         this.status = status;
     }
 
+    public String getDate() {
+        return date;
+    }
 
-
+    public void setDate(String date) {
+        this.date = date;
+    }
 }

@@ -33,6 +33,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     DatabaseReference reference;
     FusedLocationProviderClient fusedLocationProviderClient;
     TextView userAddress;
-    String status;
+    String date;
 
     Double lat,lng;
 
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //ini fusedLocationProvider
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
+        Calendar calendar = Calendar.getInstance();
 
         userName = findViewById(R.id.name);
         userContact = findViewById(R.id.contactNum);
@@ -68,6 +71,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Firebase confirm button
         confirmBtn.setOnClickListener(this);
         gpslocator.setOnClickListener(this);
+
+        SimpleDateFormat dateformat = new SimpleDateFormat("MM/dd/yy");
+        date= dateformat.format(calendar.getTime());
+
     }
 
     @Override
@@ -85,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String status = "OTHER LOCATION";
 
 
-                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,status);
+                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,status,date);
                 reference.push().setValue(helperClass);
                 Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
                 break;
