@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     DatabaseReference reference;
     FusedLocationProviderClient fusedLocationProviderClient;
     TextView userAddress;
+    String status;
 
     Double lat,lng;
 
@@ -74,16 +75,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.confirm:
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("User");
+                reference = rootNode.getReference("IncomingReport");
 
                 //get all the value
                 String name = userName.getEditText().getText().toString();
                 String contact = userContact.getEditText().getText().toString();
                 String address = userAddress.getText().toString();
                 String email = "@aaa";
+                String status = "OTHER LOCATION";
 
 
-                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng);
+                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,status);
                 reference.push().setValue(helperClass);
                 Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
                 break;

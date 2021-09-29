@@ -2,25 +2,28 @@ package com.example.responde;
 
 public class UserHelperClass {
 
-    String name, contact, email, home;
+    String name, contact, email, home,status;
     Double lat,lng;
 
     public UserHelperClass() {
     }
 
-    public UserHelperClass(String name, String contact, String email, String home, Double lat, Double lng) {
+    public UserHelperClass(String name, String contact, String email, String home, Double lat, Double lng, String status) {
         this.name = name;
         this.contact = contact;
         this.email = email;
         this.home = home;
         this.lat = lat;
         this.lng = lng;
+        this.status = status;
     }
 
     public String getName() {
+
         return name;
     }
     public void setName(String name) {
+
         this.name = name;
     }
 
@@ -29,6 +32,7 @@ public class UserHelperClass {
     }
 
     public void setContact(String contact) {
+
         this.contact = contact;
     }
 
@@ -37,6 +41,7 @@ public class UserHelperClass {
     }
 
     public void setEmail(String email) {
+
         this.email = email;
     }
 
@@ -45,6 +50,7 @@ public class UserHelperClass {
     }
 
     public void setHome(String home) {
+
         this.home = home;
     }
     public Double getLat(){
@@ -52,6 +58,7 @@ public class UserHelperClass {
     }
 
     public void setLat(Double lat) {
+
         this.lat = lat;
     }
     public Double getLng(){
@@ -59,7 +66,17 @@ public class UserHelperClass {
     }
 
     public void setLng(Double lng) {
+
         this.lng = lng;
+    }
+
+    public String getStatus() {
+
+        return status;
+    }
+    public void setStatus(String status) {
+
+        this.status = status;
     }
 
 

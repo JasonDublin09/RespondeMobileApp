@@ -59,6 +59,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
     public static final String NAME= "name";
     public static final String ADDRESS= "address";
     public static final String CONTACT= "contact";
+    public static final String EMAIL="email";
 
 
     @Override
@@ -72,7 +73,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         name = (EditText) findViewById(R.id.name1);
         eMail = null;
         contact = findViewById(R.id.contact1);
-        address = null;
         button1 = (Button) findViewById(R.id.updateBtn);
         button2 = (Button) findViewById(R.id.getlcn);
         address = findViewById(R.id.address);
@@ -118,6 +118,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
 
         editor.putString(NAME, name.getText().toString());
         editor.putString(CONTACT, contact.getText().toString());
+        editor.putString(ADDRESS, address.getText().toString());
         editor.apply();
         Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
 
@@ -126,10 +127,12 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         _name= sharedPreferences.getString(NAME,"");
         _contact= sharedPreferences.getString(CONTACT,"");
+        _address= sharedPreferences.getString(ADDRESS,"");
     }
     public void updateViews(){
         name.setText(_name);
         contact.setText(_contact);
+        address.setText(_address);
     }
     @Override
     public void onClick(View v){
