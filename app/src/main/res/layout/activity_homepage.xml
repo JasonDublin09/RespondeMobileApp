@@ -9,39 +9,43 @@
 
     tools:context=".Homepage">
 
-
     <ImageButton
         android:id="@+id/myloc_btn"
-        android:layout_width="361dp"
-        android:layout_height="204dp"
-
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="121dp"
+        android:layout_marginTop="96dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:src="@drawable/homeaddress_btn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+
 
     <ImageButton
         android:id="@+id/otherloc_btn"
-        android:layout_width="361dp"
-        android:layout_height="205dp"
-
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="26dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="100dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:src="@drawable/difflocation_btn"
-        app:layout_constraintBottom_toTopOf="@+id/bottomnavigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myloc_btn"
+        app:layout_constraintWidth_percent="0.9" />
 
     <Button
         android:id="@+id/shortroute"
