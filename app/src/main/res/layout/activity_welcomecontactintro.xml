@@ -30,6 +30,7 @@
         android:layout_marginTop="220dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/con1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -62,7 +63,7 @@
         android:layout_marginTop="400dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cntx"
+            android:id="@+id/con2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -88,8 +89,8 @@
         android:id="@+id/contactBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="550dp"
         android:layout_marginLeft="250dp"
+        android:layout_marginTop="550dp"
 
         android:text="Confirm" />
 </RelativeLayout>

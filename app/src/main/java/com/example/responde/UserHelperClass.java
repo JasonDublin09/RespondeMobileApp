@@ -5,6 +5,7 @@ public class UserHelperClass {
     String name, contact, email, home,status,date;
     Double lat,lng;
 
+
     public UserHelperClass() {
     }
 
@@ -17,6 +18,7 @@ public class UserHelperClass {
         this.lng = lng;
         this.status = status;
         this.date = date;
+
     }
 
     public String getName() {
@@ -29,6 +31,7 @@ public class UserHelperClass {
     }
 
     public String getContact() {
+
         return contact;
     }
 
@@ -38,6 +41,7 @@ public class UserHelperClass {
     }
 
     public String getEmail() {
+
         return email;
     }
 
@@ -47,6 +51,7 @@ public class UserHelperClass {
     }
 
     public String getHome() {
+
         return home;
     }
 
@@ -64,6 +69,7 @@ public class UserHelperClass {
         this.lat = lat;
     }
     public Double getLng(){
+
         return lng;
     }
 
@@ -82,6 +88,7 @@ public class UserHelperClass {
     }
 
     public String getDate() {
+
         return date;
     }
 

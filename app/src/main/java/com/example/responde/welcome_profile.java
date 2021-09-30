@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -32,6 +34,12 @@ public class welcome_profile extends AppCompatActivity {
     float x1, x2, y1, y2;
     Double lat,lng;
     String status,date;
+    SharedPreferences sharedPreferences;
+
+    public static final String SHARED_PREFS= "sharedPrefs";
+    public static final String NAME= "name";
+    public static final String CONTACT= "contact";
+    public static final String EMAIL="email";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,19 +56,17 @@ public class welcome_profile extends AppCompatActivity {
         lat=null;
         lng=null;
         status="HOME";
-        date="";
+        date=null;
+        sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("User");
                 validation();
-                validateContact();
                 validateEmail();
                 validateAddress();
 
-                if (!validation() | !validateContact() | !validateEmail() | !validateAddress()) {
+                if (!validation()  | !validateEmail() | !validateAddress()) {
                     return;
                 }
 
@@ -69,10 +75,10 @@ public class welcome_profile extends AppCompatActivity {
                     String names = name.getEditText().getText().toString();
                     String contacts = contact.getEditText().getText().toString();
                     String emails = email.getEditText().getText().toString();
-                    String addresses = address.getEditText().getText().toString();
 
-                    UserHelperClass helperClass = new UserHelperClass(names, contacts, emails, addresses, lat, lng,status,date);
-                    reference.child(contacts).setValue(helperClass);
+
+
+                    updatebutton();
                     startActivity(new Intent(welcome_profile.this, welcomecontactintro.class));
                     }
             }
@@ -189,5 +195,20 @@ public class welcome_profile extends AppCompatActivity {
         }
         return false;
     }
+
+    private void updatebutton() {
+
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+
+        editor.putString(NAME, name.getEditText().getText().toString());
+        editor.putString(CONTACT, contact.getEditText().getText().toString());
+        editor.putString(EMAIL,email.getEditText().getText().toString());
+        editor.apply();
+        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
+
+    }
+
+
+
 
 }

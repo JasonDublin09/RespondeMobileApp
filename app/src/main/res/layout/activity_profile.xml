@@ -41,8 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="564dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="615dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName" />
@@ -53,11 +53,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="99dp"
-        android:layout_marginBottom="490dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="547dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Contact Number" />
+        android:hint="Contact Number"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/email1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="481dp"
+        android:ems="10"
+        android:hint="Email Address"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/address"

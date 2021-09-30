@@ -30,13 +30,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -74,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         SimpleDateFormat dateformat = new SimpleDateFormat("MM/dd/yy");
         date= dateformat.format(calendar.getTime());
+        HashMap<String, Object> x =new HashMap<>();
 
     }
 
@@ -90,6 +95,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String address = userAddress.getText().toString();
                 String email = "@aaa";
                 String status = "OTHER LOCATION";
+
+
+
+
+
 
 
                 UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,status,date);
@@ -194,4 +204,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
     }
+
 }

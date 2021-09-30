@@ -43,10 +43,10 @@ import java.util.Locale;
 public class Profile extends AppCompatActivity implements View.OnClickListener{
 
 
-    private EditText name,contact;
+    private EditText name,contact,email;
     private TextView address;
-    String eMail= null;
-    public String _name,_contact,_address;
+
+    public String _name,_contact,_address,_email;
     SharedPreferences sharedPreferences;
     FusedLocationProviderClient fusedLocationProviderClient;
     Double lat,lng;
@@ -72,8 +72,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(Profile.this);
 
         name = (EditText) findViewById(R.id.name1);
-        eMail = null;
         contact = findViewById(R.id.contact1);
+        email = (EditText) findViewById(R.id.email1);
         button1 = (Button) findViewById(R.id.updateBtn);
         button2 = (Button) findViewById(R.id.getlcn);
         address = findViewById(R.id.address);
@@ -120,6 +120,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         editor.putString(NAME, name.getText().toString());
         editor.putString(CONTACT, contact.getText().toString());
         editor.putString(ADDRESS, address.getText().toString());
+        editor.putString(EMAIL,email.getText().toString());
         editor.apply();
         Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
 
@@ -129,11 +130,13 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         _name= sharedPreferences.getString(NAME,"");
         _contact= sharedPreferences.getString(CONTACT,"");
         _address= sharedPreferences.getString(ADDRESS,"");
+        _email= sharedPreferences.getString(EMAIL,"");
     }
     public void updateViews(){
         name.setText(_name);
         contact.setText(_contact);
         address.setText(_address);
+        email.setText(_email);
     }
     @Override
     public void onClick(View v){
