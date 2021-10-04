@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         SimpleDateFormat dateformat = new SimpleDateFormat("MM/dd/yy");
         date= dateformat.format(calendar.getTime());
-        HashMap<String, Object> x =new HashMap<>();
+        HashMap<String, String> x =new HashMap<>();
 
     }
 
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String contact = userContact.getEditText().getText().toString();
                 String address = userAddress.getText().toString();
                 String email = "@aaa";
-                String status = "OTHER LOCATION";
+                String option = "OTHER LOCATION";
 
 
 
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,status,date);
+                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,option,date);
                 reference.push().setValue(helperClass);
                 Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
                 break;
