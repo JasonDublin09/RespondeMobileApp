@@ -3,6 +3,7 @@ package com.example.responde;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,35 +18,41 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Arrays;
 import java.util.List;
 
-public class welcomecontactintro extends AppCompatActivity {
+public class welcomecontactintro extends AppCompatActivity implements View.OnClickListener{
 
     float x1, x2, y1, y2;
     TextInputLayout name1, name2, contact1, contact2;
     Button contactbtn;
+    public String _name1,_contact1,_name2,_contact2;
+
+    SharedPreferences sharedPreferences;
+
+    public static final String SHARED_PREFS= "sharedPrefs";
+    public static final String EMCONTACTNAME1="emname1";
+    public static final String EMCONTACTNAME2="emname1";
+    public static final String CONTACT1="contact1";
+    public static final String CONTACT2="contact2";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcomecontactintro);
+        sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
 
         contactbtn = findViewById(R.id.contactBtn);
-        name1 = findViewById(R.id.name_1);
-        contact1 = findViewById(R.id.contact_1);
-        name2 = findViewById(R.id.name_2);
-        contact2 = findViewById(R.id.contact_2);
+        name1 = findViewById(R.id.name1);
+        contact1 = findViewById(R.id.contact1);
+        name2 = findViewById(R.id.name2);
+        contact2 = findViewById(R.id.contact2);
 
-        String y=contact1.getEditText().getText().toString();
-        String z=contact2.getEditText().getText().toString();
-        String[] x= {y,z};
-        List<String> tag= Arrays.asList(x);
 
-        contactbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
-                DatabaseReference reference = rootNode.getReference("Emergencycontact");
-                reference.push().setValue(y);
-            }
-        });
+        //String[] x= {y,z};
+        //List<String> tag= Arrays.asList(x);
+
+        contactbtn.setOnClickListener(this);
+
+        loadData();
+        updateViews();
 
     }
     public boolean onTouchEvent(android.view.MotionEvent touchEvent){
@@ -71,4 +78,43 @@ public class welcomecontactintro extends AppCompatActivity {
         return false;
     }
 
+    private void updatebutton() {
+
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+
+        String x= String.valueOf(contact1.getEditText().getText());
+
+        editor.putString(EMCONTACTNAME1, name1.getEditText().getText().toString());
+        editor.putString(EMCONTACTNAME2, name2.getEditText().getText().toString());
+        editor.putString(CONTACT1,contact1.getEditText().getText().toString());
+        editor.putString(CONTACT2, contact2.getEditText().getText().toString());
+        editor.apply();
+        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.contactBtn:
+                updatebutton();
+                //Toast.makeText(this,x,Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+    public void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        _name1= sharedPreferences.getString(EMCONTACTNAME1,"");
+        _contact1= sharedPreferences.getString(CONTACT1,"");
+        _name2= sharedPreferences.getString(EMCONTACTNAME2,"");
+        _contact2= sharedPreferences.getString(CONTACT2,"");
+
+    }
+    public void updateViews(){
+        name1.getEditText().setText(_name1);
+        contact1.getEditText().setText(_contact1);
+        name2.getEditText().setText(_name2);
+        contact2.getEditText().setText(_contact2);
+    }
 }
