@@ -1,15 +1,20 @@
 package com.example.responde;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserHelperClass {
 
-    String name, contact, email, home,option,date;
+    String name, contact, email, home,option,date,status;
     Double lat,lng;
+    /*ArrayList<String> emcon;*/
+    List<String> emcon;
 
 
     public UserHelperClass() {
     }
 
-    public UserHelperClass(String name, String contact, String email, String home, Double lat, Double lng, String option,String date) {
+    public UserHelperClass(String name, String contact, String email, String home, Double lat, Double lng, String option,String date,String status/*, ArrayList<String> emcon*/, List<String>emcon) {
         this.name = name;
         this.contact = contact;
         this.email = email;
@@ -18,6 +23,8 @@ public class UserHelperClass {
         this.lng = lng;
         this.option = option;
         this.date = date;
+        this.status= status;
+        this.emcon = emcon;
 
     }
 
@@ -95,4 +102,30 @@ public class UserHelperClass {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+   /* public ArrayList<String> getEmcon() {
+        return emcon;
+    }
+
+    public void setEmcon(ArrayList<String> emcon) {
+        this.emcon = emcon;
+    }*/
+
+    public List<String> getEmcon() {
+        return emcon;
+    }
+
+    public void setEmcon(List<String> emcon) {
+        this.emcon = emcon;
+    }
 }
+
+

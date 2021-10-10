@@ -8,6 +8,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -35,6 +36,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -51,7 +53,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     DatabaseReference reference;
     FusedLocationProviderClient fusedLocationProviderClient;
     TextView userAddress;
-    String date;
+    String date, status;
+    SharedPreferences sharedPreferences;
+    public String _contact1,_contact2;
+
+    public static final String SHARED_PREFS= "sharedPrefs";
+    public static final String CONTACT1="contact1";
+    public static final String CONTACT2="contact2";
+
 
     Double lat,lng;
 
@@ -71,15 +80,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         userEmail = findViewById(R.id.email);
         confirmBtn = findViewById(R.id.confirm);
         gpslocator = findViewById(R.id.gps_locator);
+        sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
 
         //Firebase confirm button
         confirmBtn.setOnClickListener(this);
         gpslocator.setOnClickListener(this);
 
-        SimpleDateFormat dateformat = new SimpleDateFormat("MM/dd/yy");
+        SimpleDateFormat dateformat = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
         date= dateformat.format(calendar.getTime());
-        HashMap<String, String> x =new HashMap<>();
-
+        // HashMap<String, String> x =new HashMap<>();
+        loadData();
     }
 
     @Override
@@ -95,6 +105,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String address = userAddress.getText().toString();
                 String email = "@aaa";
                 String option = "OTHER LOCATION";
+                String status = "";
+                String y = _contact1;
+                String z = _contact2;
+                String[] x= {y,z};
+                List<String> tag= Arrays.asList(x);
 
 
 
@@ -102,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,option,date);
+                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,option,date,status/*, (ArrayList<String>) tag*/, tag);
                 reference.push().setValue(helperClass);
                 Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
                 break;
@@ -205,4 +220,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    public void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        _contact1= sharedPreferences.getString(CONTACT1,"");
+        _contact2= sharedPreferences.getString(CONTACT2,"");
+
+    }
 }
