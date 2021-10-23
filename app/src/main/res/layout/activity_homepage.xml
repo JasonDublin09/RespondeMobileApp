@@ -8,7 +8,12 @@
     android:background="@drawable/general_bg"
 
     tools:context=".Homepage">
-
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
     <ImageButton
         android:id="@+id/myloc_btn"
         android:layout_width="0dp"
@@ -24,6 +29,7 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         app:layout_constraintWidth_percent="0.9" />
 
 
