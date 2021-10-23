@@ -29,12 +29,7 @@
         android:layout_below="@+id/whattodoholder"
         android:layout_centerHorizontal="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:textSize="50dp"
-            android:text="@string/whattodobefore_string" />
+
 
     </ScrollView>
 

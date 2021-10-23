@@ -9,5 +9,38 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="whattodobefore_string">\nexample1\nexample2\nexample3\nexample4\nexample5\nexample6\nexample7\nexample8\nexample9\nexample10\nexample11\nexample12</string>
+
+    <string name="whattodobefore_string">\n\u2022Install smoke alarms on every level of your residence and do proper maintenance.
+\n\u2022Review escape routes with your family. Practice escaping from each room.
+\n\u2022Consider escape ladders if your residence has more than one level.
+\n\u2022Never use flammable liquids indoors.
+\n\u2022Never smoke near flammable liquids.
+\n\u2022Be careful when using heating sources and cooking burners.
+\n\u2022Keep matches and lighters up high, away from children, and, if possible, in a locked cabinet.
+\n\u2022Never smoke in bed or when drowsy or medicated. Provide smokers with deep, sturdy ashtrays. Douse cigarette and cigar butts with water before disposal.
+\n\u2022Have the electrical wiring in your residence checked by an electrician.
+\n\u2022Sleep with your door closed.
+\n\u2022Install fire extinguishers in your residence and teach family members how to use them.
+\n\u2022Consider installing an automatic fire sprinkler system in your residence.
+\n\u2022Ask your local fire department to inspect your residence for fire safety and prevention.</string>
+
+    <string name="whattododuring_string">\n\u2022 Get out as quickly and as safely as possible. The less time you are exposed to poisonous gases, the safer you will be.
+        \n\u2022 If a stove fire starts, slide a lid over the burning pan and turn off the burner. Leave the lid in place until the pan is completely cool.
+        \n\u2022 Using a lid to contain and smother the fire is your safest action. Getting the fire extinguisher or baking soda to extinguish the fire delays action.
+        \n\u2022 Flour and other cooking products can react explosively to flame and should never be sprinkled over fire. Moving the pan can cause serious injury or spread the fire.
+        \n\u2022 Never pour water on grease fires.
+        \n\u2022 If you are escaping through a closed door, feel the door, cracks, and doorknob with the back of your hand before opening the door. If it is cool and there is no smoke at the bottom or top, open the door slowly.
+        \n\u2022 If you see smoke or fire beyond the door, close it and use your second way out. If the door is warm, use your second way out. It is a natural tendency to automatically use the door, but fire may be right outside. Feeling the door will warn you of possible danger.
+        \n\u2022 If you see smoke or fire in your first escape route, use your second way out. The less time you are exposed to poisonous gases or flames, the safer you will be.
+        \n\u2022 If you must exit through smoke, crawl low under the smoke to your exit. Fires produce many poisonous gases. Some are heavy and will sink low to the floor; others will rise carrying soot towards the ceiling.
+        \n\u2022 Close doors behind you as you escape to delay the spread of the fire.
+        \n\u2022 Once you are out, stay out.</string>
+
+    <string name="whattodoafter_string">\n\u2022Find a safe place to stay. No matter the amount of damage, you likely can\'t stay in your own home. If staying with friends or family isn\'t an option, talk to your local disaster relief agency
+\n\u2022Contact your insurance agent. You\'ll need to start a claim and address your immediate needs. Loss of use funds from your insurance policy may cover living and other daily expenses. If you receive these funds or an advance on your claim, save all receipts and keep a detailed record of all purchases.\n\u2022Protect your home. Even though your home is damaged, and you may not be able to stay there, as the owner you still need to protect it as much as possible from both weather and unlawful entry.\n\u2022Get a copy of the fire report. You can usually get fire reports from your local fire department. The report may be helpful in providing information for your insurance agency.\n\u2022Take care of your family’s mental health. Disasters can make it difficult to cope. This is particularly true of children. Be patient with yourself as you work through any stress caused by the fire. If you or others in your family are having difficulty coping</string>
+
+
+
+
+
 </resources>
