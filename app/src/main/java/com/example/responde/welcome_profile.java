@@ -76,8 +76,6 @@ public class welcome_profile extends AppCompatActivity {
                     String contacts = contact.getEditText().getText().toString();
                     String emails = email.getEditText().getText().toString();
 
-
-
                     updatebutton();
                     startActivity(new Intent(welcome_profile.this, welcomecontactintro.class));
                     }

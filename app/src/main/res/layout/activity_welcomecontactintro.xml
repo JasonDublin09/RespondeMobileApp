@@ -38,7 +38,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/name2"
+        android:id="@+id/sName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -79,8 +79,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="47dp"
+        android:layout_marginBottom="-1dp"
         android:text="The purpose of this contact list is to immediatly notify the people in your contact list that you are in an emergency related to a fire incident." />
 
     <Button
