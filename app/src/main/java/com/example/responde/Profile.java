@@ -61,6 +61,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
     public static final String ADDRESS= "address";
     public static final String CONTACT= "contact";
     public static final String EMAIL="email";
+    public static final String LAT="lat";
+    public static final String LNG="lng";
 
 
     @Override
@@ -121,6 +123,9 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         editor.putString(CONTACT, contact.getText().toString());
         editor.putString(ADDRESS, address.getText().toString());
         editor.putString(EMAIL,email.getText().toString());
+        editor.putString(LAT,lat.toString());
+        editor.putString(LNG,lng.toString());
+
         editor.apply();
         Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
 
