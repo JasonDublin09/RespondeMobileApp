@@ -24,7 +24,7 @@ public class Contacts extends AppCompatActivity {
 
     public static final String SHARED_PREFS= "sharedPrefs";
     public static final String EMCONTACTNAME1="emname1";
-    public static final String EMCONTACTNAME2="emname1";
+    public static final String EMCONTACTNAME2="emname2";
     public static final String CONTACT1="contact1";
     public static final String CONTACT2="contact2";
 
@@ -35,8 +35,8 @@ public class Contacts extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
 
         name1 = findViewById(R.id.name1);
-        contact1 = findViewById(R.id.name2);
-        name2 = findViewById(R.id.contact1);
+        contact1 = findViewById(R.id.contact1);
+        name2 = findViewById(R.id.name2);
         contact2 = findViewById(R.id.contact2);
         confirm = findViewById(R.id.contactBtn2);
 
@@ -49,7 +49,7 @@ public class Contacts extends AppCompatActivity {
                 validateName1();
                 validateName2();
 
-                if (!validateContact1()  | !validateContact2() | !validateName1() | validateName2()) {
+                if (!validateContact1()  | !validateContact2() | !validateName1() | !validateName2()) {
                     return;
                 }
                 else {
@@ -59,6 +59,8 @@ public class Contacts extends AppCompatActivity {
                     editor.putString(CONTACT1,contact1.getEditText().getText().toString());
                     editor.putString(CONTACT2, contact2.getEditText().getText().toString());
                     editor.apply();
+                    loadData();
+                    updateViews();
                 }
             }
 
@@ -105,7 +107,7 @@ public class Contacts extends AppCompatActivity {
             contact1.setError("No white spaces");
             return false;
         }
-        else if (valContact.length() >= 50 || valContact.length() < 11){
+        else if (valContact.length() >= 50 || valContact.length() < 10){
             contact1.setError("Invalid Contact number");
             return false;
         }
@@ -127,7 +129,7 @@ public class Contacts extends AppCompatActivity {
             contact2.setError("No white spaces");
             return false;
         }
-        else if (valContact.length() >= 50 || valContact.length() < 11){
+        else if (valContact.length() >= 50 || valContact.length() < 10){
             contact2.setError("Invalid Contact number");
             return false;
         }
@@ -185,7 +187,7 @@ public class Contacts extends AppCompatActivity {
         contact1.getEditText().setText(_contact1);
         name2.getEditText().setText(_name2);
         contact2.getEditText().setText(_contact2);
+        Toast.makeText(this,"Your information has been updated",Toast.LENGTH_SHORT).show();
     }
-
 
 }

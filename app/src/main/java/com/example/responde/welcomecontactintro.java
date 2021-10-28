@@ -24,7 +24,7 @@ public class welcomecontactintro extends AppCompatActivity {
 
     public static final String SHARED_PREFS= "sharedPrefs";
     public static final String EMCONTACTNAME1="emname1";
-    public static final String EMCONTACTNAME2="emname1";
+    public static final String EMCONTACTNAME2="emname2";
     public static final String CONTACT1="contact1";
     public static final String CONTACT2="contact2";
 
@@ -50,14 +50,14 @@ public class welcomecontactintro extends AppCompatActivity {
                 validateName1();
                 validateName2();
 
-                if (!validateContact1()  | !validateContact2() | !validateName1() | validateName2()) {
+                if (!validateContact1()  || !validateContact2() || !validateName1() || !validateName2()) {
                     return;
                 }
 
                 else {
-                    //loadData();
+                    loadData();
                     updatebutton();
-                    //updateViews();
+                    updateViews();
                     startActivity(new Intent(welcomecontactintro.this, welcomelastpage.class));
                     }
             }
@@ -67,7 +67,7 @@ public class welcomecontactintro extends AppCompatActivity {
     private void updatebutton() {
 
         SharedPreferences.Editor editor= sharedPreferences.edit();
-        String x= String.valueOf(contact1.getEditText().getText());
+
         editor.putString(EMCONTACTNAME1, name1.getEditText().getText().toString());
         editor.putString(EMCONTACTNAME2, name2.getEditText().getText().toString());
         editor.putString(CONTACT1,contact1.getEditText().getText().toString());
@@ -89,18 +89,18 @@ public class welcomecontactintro extends AppCompatActivity {
         contact2.getEditText().setText(_contact2);
     }
     public Boolean validateContact1() {
-        String valContact = contact1.getEditText().getText().toString();
+        String valContact1 = contact1.getEditText().getText().toString();
         String noWhiteSpaces = "\\A\\w{4,20}\\z";
 
-        if (valContact.isEmpty()) {
+        if (valContact1.isEmpty()) {
             contact1.setError("Field cannot be empty");
             return false;
         }
-        else if (!valContact.matches(noWhiteSpaces)) {
+        else if (!valContact1.matches(noWhiteSpaces)) {
             contact1.setError("No white spaces");
             return false;
         }
-        else if (valContact.length() >= 50 || valContact.length() < 11){
+        else if (valContact1.length() >= 50 || valContact1.length() < 11){
             contact1.setError("Invalid Contact number");
             return false;
         }
@@ -111,18 +111,18 @@ public class welcomecontactintro extends AppCompatActivity {
         }
     }
     public Boolean validateContact2() {
-        String valContact = contact2.getEditText().getText().toString();
+        String valContact2 = contact2.getEditText().getText().toString();
         String noWhiteSpaces = "\\A\\w{4,20}\\z";
 
-        if (valContact.isEmpty()) {
+        if (valContact2.isEmpty()) {
             contact2.setError("Field cannot be empty");
             return false;
         }
-        else if (!valContact.matches(noWhiteSpaces)) {
+        else if (!valContact2.matches(noWhiteSpaces)) {
             contact2.setError("No white spaces");
             return false;
         }
-        else if (valContact.length() >= 50 || valContact.length() < 11){
+        else if (valContact2.length() >= 50 || valContact2.length() < 11){
             contact2.setError("Invalid Contact number");
             return false;
         }

@@ -116,7 +116,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void updatebutton() {
-
+        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
         SharedPreferences.Editor editor= sharedPreferences.edit();
 
         editor.putString(NAME, name.getText().toString());
