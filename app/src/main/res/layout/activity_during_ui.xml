@@ -20,14 +20,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.039" />
+
     <TextView
         android:id="@+id/whattodotextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="What to do during a fire?"
-
+        android:layout_marginTop="70dp"
+        android:text="What to do after a fire?"
+        android:fontFamily="@font/milkynice"
+        android:textSize="30dp"
         />
     <LinearLayout
         android:id="@+id/whattodoholder"

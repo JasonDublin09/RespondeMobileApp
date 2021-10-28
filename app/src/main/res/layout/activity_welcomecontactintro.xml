@@ -80,16 +80,18 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="-1dp"
-        android:text="The purpose of this contact list is to immediatly notify the people in your contact list that you are in an emergency related to a fire incident." />
+        android:fontFamily="@font/milkynice"
+        android:text="The purpose of this contact list is to immediatly notify the people in your contact list that you are in an emergency related to a fire incident."
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/contactBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="250dp"
-        android:layout_marginTop="550dp"
-
+        android:layout_marginTop="480dp"
+        android:layout_centerHorizontal="true"
         android:text="Confirm" />
 </RelativeLayout>

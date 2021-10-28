@@ -12,9 +12,10 @@
         android:id="@+id/contactBtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
-        android:layout_marginTop="550dp"
-
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="129dp"
         android:text="Confirm" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -34,9 +35,8 @@
         android:id="@+id/name1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        app:startIconDrawable="@drawable/ic_person"
-        >
+        android:layout_marginTop="75dp"
+        app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -44,6 +44,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:baselineAligned="false"
             android:hint="Name" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,15 +52,14 @@
         android:id="@+id/contact1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="227dp"
-        app:startIconDrawable="@drawable/ic_contacts"
-        app:prefixText="+63"
+        android:layout_marginTop="150dp"
         app:counterEnabled="true"
         app:counterMaxLength="10"
         app:helperText="Example: 9211098876"
         app:helperTextTextColor="@color/black"
+        app:prefixText="+63"
         app:prefixTextColor="@color/black"
-        >
+        app:startIconDrawable="@drawable/ic_contacts">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -67,6 +67,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
 
+            android:baselineAligned="false"
             android:hint="Contact number" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,9 +77,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="320dp"
-        app:startIconDrawable="@drawable/ic_person"
-        >
+        android:layout_marginTop="225dp"
+        android:orientation="vertical"
+        app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -86,6 +87,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:baselineAligned="false"
             android:hint="Name" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,15 +96,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
-        app:prefixText="+63"
+        android:layout_marginTop="300dp"
         app:counterEnabled="true"
         app:counterMaxLength="10"
         app:helperText="Example: 9211098876"
         app:helperTextTextColor="@color/black"
+        app:prefixText="+63"
         app:prefixTextColor="@color/black"
-        app:startIconDrawable="@drawable/ic_contacts"
-        >
+        app:startIconDrawable="@drawable/ic_contacts">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -110,8 +111,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Contact number"
-            />
+            android:baselineAligned="false"
+            android:hint="Contact number" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </RelativeLayout>

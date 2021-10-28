@@ -99,15 +99,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 //properties of the alertdialog
                 builder.setCancelable(true);
-                builder.setTitle("This is sample title");
-                builder.setMessage("This is a sample popup msg");
-
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
+                builder.setTitle("RESPONDE says: ");
+                builder.setMessage("Report has been sent!");
+                //builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                // @Override
+                // public void onClick(DialogInterface dialogInterface, int i) {
+                //     dialogInterface.cancel();
+                // }
+                // });
                 builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
