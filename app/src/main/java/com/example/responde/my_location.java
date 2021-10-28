@@ -1,7 +1,9 @@
 package com.example.responde;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,6 +24,7 @@ import java.util.List;
 
 public class my_location extends AppCompatActivity {
 
+    TextView popupmodal;
     TextInputLayout userName, userContact;
     Button cancel_btn, confirmBtn;
     public String _name,_contact,_address,_email,_contact1,_contact2,_lat,_lng;
@@ -49,6 +52,7 @@ public class my_location extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_location);
 
+        popupmodal = findViewById(R.id.popupmylocation);
         userName = findViewById(R.id.name);
         userContact = findViewById(R.id.contactNum);
         address = findViewById(R.id.address);
@@ -86,7 +90,29 @@ public class my_location extends AppCompatActivity {
                 reference.push().setValue(helperClass);
                 Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
 
+                //para sa popup modal
+                AlertDialog.Builder builder = new AlertDialog.Builder(my_location.this);
+                //properties of the alertdialog
+                builder.setCancelable(true);
+                builder.setTitle("This is sample title");
+                builder.setMessage("This is a sample popup msg");
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        popupmodal.setVisibility(View.VISIBLE);
+                    }
+                });
+
+                builder.show();
+
             }
+
         }));
         cancel_btn.setOnClickListener(new View.OnClickListener() {
             @Override

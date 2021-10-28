@@ -1,12 +1,14 @@
 package com.example.responde;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextInputLayout userName, userContact, userEmail;
     Button confirmBtn, gpslocator;
-
+    TextView popupmodal;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -72,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //ini fusedLocationProvider
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
         Calendar calendar = Calendar.getInstance();
-
+        popupmodal = findViewById(R.id.popupmyotherlocation);
         userName = findViewById(R.id.name);
         userContact = findViewById(R.id.contactNum);
         userAddress = findViewById(R.id.home);
@@ -89,6 +91,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         date= dateformat.format(calendar.getTime());
         // HashMap<String, String> x =new HashMap<>();
         loadData();
+
+        confirmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //para sa popup modal
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                //properties of the alertdialog
+                builder.setCancelable(true);
+                builder.setTitle("This is sample title");
+                builder.setMessage("This is a sample popup msg");
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        popupmodal.setVisibility(View.VISIBLE);
+                    }
+                });
+
+                builder.show();
+            }
+        });
+
+
     }
 
     @Override
