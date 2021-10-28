@@ -65,31 +65,18 @@ public class welcome_profile extends AppCompatActivity {
                 validation();
                 validateEmail();
                 validateAddress();
+                validateContact();
 
-                if (!validation()  | !validateEmail() | !validateAddress()) {
+                if (!validation()  | !validateEmail() | !validateAddress() | !validateContact()) {
                     return;
                 }
 
                else {
-               //get all the values
-                    String names = name.getEditText().getText().toString();
-                    String contacts = contact.getEditText().getText().toString();
-                    String emails = email.getEditText().getText().toString();
-
                     updatebutton();
                     startActivity(new Intent(welcome_profile.this, welcomecontactintro.class));
                     }
             }
         });
-    }
-
-    public Boolean terms() {
-        if (termsAndAgreement.isChecked()) {
-            return true;
-        }
-        else {
-            return false;
-        }
     }
 
     public Boolean validation() {
@@ -109,7 +96,6 @@ public class welcome_profile extends AppCompatActivity {
             return true;
         }
     }
-
     public Boolean validateContact() {
         String valContact = contact.getEditText().getText().toString();
         String noWhiteSpaces = "\\A\\w{4,20}\\z";
@@ -122,7 +108,7 @@ public class welcome_profile extends AppCompatActivity {
             contact.setError("No white spaces");
             return false;
         }
-        else if (valContact.length() >= 50 || valContact.length() < 11){
+        else if (valContact.length() >= 50 || valContact.length() < 10){
             contact.setError("Invalid Contact number");
             return false;
         }
@@ -132,7 +118,6 @@ public class welcome_profile extends AppCompatActivity {
             return true;
         }
     }
-
     public Boolean validateEmail() {
         String valEmail = email.getEditText().getText().toString();
         String noWhiteSpaces = "\\A\\w{4,20}\\z";
@@ -156,7 +141,6 @@ public class welcome_profile extends AppCompatActivity {
             return true;
         }
     }
-
     public Boolean validateAddress() {
         String valAddress = address.getEditText().getText().toString();
 
@@ -170,30 +154,6 @@ public class welcome_profile extends AppCompatActivity {
             return true;
         }
     }
-
-    public boolean onTouchEvent(android.view.MotionEvent touchEvent) {
-        switch (touchEvent.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                x1 = touchEvent.getX();
-                y1 = touchEvent.getY();
-                break;
-            case MotionEvent.ACTION_UP:
-                x2 = touchEvent.getX();
-                y2 = touchEvent.getY();
-                //swipe right
-                if (x1 > x2) {
-                    Intent i = new Intent(welcome_profile.this, welcomecontactintro.class);
-                    startActivity(i);
-                    //swipe left
-                } else if (x1 < x2) {
-                    Intent i = new Intent(welcome_profile.this, welcomepage.class);
-                    startActivity(i);
-                }
-                break;
-        }
-        return false;
-    }
-
     private void updatebutton() {
 
         SharedPreferences.Editor editor= sharedPreferences.edit();
@@ -205,8 +165,5 @@ public class welcome_profile extends AppCompatActivity {
         Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
 
     }
-
-
-
 
 }

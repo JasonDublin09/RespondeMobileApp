@@ -59,8 +59,6 @@ public class Contacts extends AppCompatActivity {
                     editor.putString(CONTACT1,contact1.getEditText().getText().toString());
                     editor.putString(CONTACT2, contact2.getEditText().getText().toString());
                     editor.apply();
-
-
                 }
             }
 

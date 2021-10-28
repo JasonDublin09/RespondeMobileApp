@@ -110,12 +110,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String[] x= {y,z};
                 List<String> tag= Arrays.asList(x);
 
-
-
-
-
-
-
                 UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,option,date,status/*, (ArrayList<String>) tag*/, tag);
                 reference.push().setValue(helperClass);
                 Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();

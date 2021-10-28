@@ -12,13 +12,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal|center_vertical"
         android:text="We are all set!"
         android:textAlignment="center"
         android:textSize="50dp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"
-        />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button"

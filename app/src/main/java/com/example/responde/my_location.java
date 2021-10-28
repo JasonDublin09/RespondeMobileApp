@@ -44,7 +44,6 @@ public class my_location extends AppCompatActivity {
     public static final String LAT="lat";
     public static final String LNG="lng";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
