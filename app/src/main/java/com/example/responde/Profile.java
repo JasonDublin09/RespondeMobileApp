@@ -34,6 +34,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 
 import java.io.IOException;
@@ -43,13 +44,12 @@ import java.util.Locale;
 public class Profile extends AppCompatActivity implements View.OnClickListener{
 
 
-    private EditText name,contact,email;
+    private TextInputLayout name,contact,email, address1;
     private TextView address;
-
     public String _name,_contact,_address,_email;
     SharedPreferences sharedPreferences;
     FusedLocationProviderClient fusedLocationProviderClient;
-    Double lat,lng;
+    Double lat, lng;
     String date;
 
     String userName;
@@ -73,12 +73,13 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         //ini fusedLocationProvider
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(Profile.this);
 
-        name = (EditText) findViewById(R.id.name1);
+        name =  findViewById(R.id.name1);
         contact = findViewById(R.id.contact1);
-        email = (EditText) findViewById(R.id.email1);
-        button1 = (Button) findViewById(R.id.updateBtn);
+        email = findViewById(R.id.email1);
+        button1 = findViewById(R.id.updateBtn);
         button2 = (Button) findViewById(R.id.getlcn);
-        address = findViewById(R.id.address);
+        address = findViewById(R.id.addressedit);
+        address1 = findViewById(R.id.address);
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -115,57 +116,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         updateViews();
     }
 
-    private void updatebutton() {
-        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
-        SharedPreferences.Editor editor= sharedPreferences.edit();
-
-        editor.putString(NAME, name.getText().toString());
-        editor.putString(CONTACT, contact.getText().toString());
-        editor.putString(ADDRESS, address.getText().toString());
-        editor.putString(EMAIL,email.getText().toString());
-        editor.putString(LAT,lat.toString());
-        editor.putString(LNG,lng.toString());
-
-        editor.apply();
-        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
-
-    }
-    public void loadData(){
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        _name= sharedPreferences.getString(NAME,"");
-        _contact= sharedPreferences.getString(CONTACT,"");
-        _address= sharedPreferences.getString(ADDRESS,"");
-        _email= sharedPreferences.getString(EMAIL,"");
-    }
-    public void updateViews(){
-        name.setText(_name);
-        contact.setText(_contact);
-        address.setText(_address);
-        email.setText(_email);
-    }
-    @Override
-    public void onClick(View v){
-        switch (v.getId()){
-            case R.id.updateBtn:
-                updatebutton();
-                break;
-            case R.id.getlcn:
-                Toast.makeText(getApplicationContext(),"Test", Toast.LENGTH_SHORT).show();
-                if (ActivityCompat.checkSelfPermission(Profile.this,
-                        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Profile.this,
-                        Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                    //When Permission Granted
-                    getCurrentLocation();
-                } else {
-                    //when permission is not granted
-                    //req permission
-                    ActivityCompat.requestPermissions(Profile.this
-                            , new String[]{Manifest.permission.ACCESS_FINE_LOCATION
-                                    , Manifest.permission.ACCESS_COARSE_LOCATION}
-                            , 100);
-                }
-        }
-    }
     @SuppressLint("MissingPermission")
     private void getCurrentLocation() {
         //ini location manager
@@ -249,6 +199,59 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         }
 
     }
+
+    private void updatebutton() {
+        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+
+        editor.putString(NAME, name.getEditText().toString());
+        editor.putString(CONTACT, contact.getEditText().toString());
+        editor.putString(ADDRESS, address1.getEditText().toString());
+        editor.putString(ADDRESS, address.getText().toString());
+        editor.putString(EMAIL,email.getEditText().toString());
+        editor.putString(LAT,lat.toString());
+        editor.putString(LNG,lng.toString());
+
+        editor.apply();
+        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
+
+    }
+    public void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        _name= sharedPreferences.getString(NAME,"");
+        _contact= sharedPreferences.getString(CONTACT,"");
+        _address= sharedPreferences.getString(ADDRESS,"");
+        _email= sharedPreferences.getString(EMAIL,"");
+    }
+    public void updateViews(){
+        name.getEditText().setText(_name);
+        contact.getEditText().setText(_contact);
+        address.setText(_address);
+        email.getEditText().setText(_email);
+    }
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.updateBtn:
+                updatebutton();
+                break;
+            case R.id.getlcn:
+                Toast.makeText(getApplicationContext(),"Test", Toast.LENGTH_SHORT).show();
+                if (ActivityCompat.checkSelfPermission(Profile.this,
+                        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Profile.this,
+                        Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    //When Permission Granted
+                } else {
+                    //when permission is not granted
+                    //req permission
+                    ActivityCompat.requestPermissions(Profile.this
+                            , new String[]{Manifest.permission.ACCESS_FINE_LOCATION
+                                    , Manifest.permission.ACCESS_COARSE_LOCATION}
+                            , 100);
+                }
+        }
+    }
+
 }
 
 

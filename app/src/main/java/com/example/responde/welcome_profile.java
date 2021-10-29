@@ -37,9 +37,10 @@ public class welcome_profile extends AppCompatActivity {
     SharedPreferences sharedPreferences;
 
     public static final String SHARED_PREFS= "sharedPrefs";
-    public static final String NAME= "name";
-    public static final String CONTACT= "contact";
-    public static final String EMAIL="email";
+    public static final String NAME = "name";
+    public static final String CONTACT = "contact";
+    public static final String EMAIL = "email";
+    public static final String ADDRESS = "address";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +54,7 @@ public class welcome_profile extends AppCompatActivity {
         confirm = findViewById(R.id.save);
         ta = findViewById(R.id.tAnda);
         termsAndAgreement = findViewById(R.id.checkbox);
-        lat=null;
-        lng=null;
-        status="HOME";
-        date=null;
+
         sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
 
         confirm.setOnClickListener(new View.OnClickListener() {
