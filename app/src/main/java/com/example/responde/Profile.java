@@ -205,8 +205,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         editor.putString(CONTACT, contact.getEditText().getText().toString());
         editor.putString(ADDRESS, address.getText().toString());
         editor.putString(EMAIL,email.getEditText().getText().toString());
-        //editor.putString(LAT,lat.toString());
-        //editor.putString(LNG,lng.toString());
+        editor.putString(LAT,lat.toString());
+        editor.putString(LNG,lng.toString());
         editor.apply();
         loadData();
         updateViews();
@@ -217,7 +217,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         _name= sharedPreferences.getString(NAME,"");
         _contact= sharedPreferences.getString(CONTACT,"");
-        //_address= sharedPreferences.getString(ADDRESS,"");
+        _address= sharedPreferences.getString(ADDRESS,"");
         _email= sharedPreferences.getString(EMAIL,"");
     }
     public void updateViews(){
