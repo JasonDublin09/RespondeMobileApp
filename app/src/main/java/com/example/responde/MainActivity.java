@@ -245,8 +245,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        _contact1= sharedPreferences.getString("+63" + CONTACT1,"");
-        _contact2= sharedPreferences.getString("+63" + CONTACT2,"");
+        _contact1= sharedPreferences.getString(CONTACT1,"");
+        _contact2= sharedPreferences.getString(CONTACT2,"");
         _name= sharedPreferences.getString(NAME,"");
         _contact= sharedPreferences.getString(CONTACT,"");
     }
