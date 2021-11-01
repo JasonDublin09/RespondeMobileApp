@@ -205,6 +205,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         editor.putString(CONTACT, contact.getEditText().getText().toString());
         editor.putString(ADDRESS, address.getText().toString());
         editor.putString(EMAIL,email.getEditText().getText().toString());
+        editor.putString(LAT,lat.toString());
+        editor.putString(LNG,lng.toString());
         editor.apply();
         loadData();
         updateViews();
@@ -236,10 +238,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
                         Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Profile.this,
                         Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     //When Permission Granted
-                    SharedPreferences.Editor editor= sharedPreferences.edit();
-                    editor.putString(LAT,lat.toString());
-                    editor.putString(LNG,lng.toString());
-                    editor.apply();
                     getCurrentLocation();
                 } else {
                     //when permission is not granted

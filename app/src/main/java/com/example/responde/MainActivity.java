@@ -112,8 +112,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String email = "@aaa";
                 String option = "OTHER LOCATION";
                 String status = "";
-                String y = _contact1;
-                String z = _contact2;
+                String y = "+63" + _contact1;
+                String z = "+63" + _contact2;
                 String[] x= {y,z};
                 List<String> tag= Arrays.asList(x);
 
