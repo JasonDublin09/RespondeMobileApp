@@ -44,7 +44,7 @@ import java.util.Locale;
 public class Profile extends AppCompatActivity implements View.OnClickListener{
 
 
-    private TextInputLayout name,contact,email, address1;
+    TextInputLayout name,contact,email, address1;
     private TextView address;
     public String _name,_contact,_address,_email;
     SharedPreferences sharedPreferences;
@@ -52,8 +52,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
     Double lat, lng;
     String date;
 
-    String userName;
-    DatabaseReference reference;
     private Button button1,button2;
 
     public static final String SHARED_PREFS= "sharedPrefs";
@@ -111,7 +109,6 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
                 return false;
             }
         });
-
         loadData();
         updateViews();
     }
@@ -204,15 +201,15 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
         SharedPreferences.Editor editor= sharedPreferences.edit();
 
-        editor.putString(NAME, name.getEditText().toString());
-        editor.putString(CONTACT, contact.getEditText().toString());
-        editor.putString(ADDRESS, address1.getEditText().toString());
+        editor.putString(NAME, name.getEditText().getText().toString());
+        editor.putString(CONTACT, contact.getEditText().getText().toString());
         editor.putString(ADDRESS, address.getText().toString());
-        editor.putString(EMAIL,email.getEditText().toString());
-        editor.putString(LAT,lat.toString());
-        editor.putString(LNG,lng.toString());
-
+        editor.putString(EMAIL,email.getEditText().getText().toString());
+        //editor.putString(LAT,lat.toString());
+        //editor.putString(LNG,lng.toString());
         editor.apply();
+        loadData();
+        updateViews();
         Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
 
     }
@@ -220,7 +217,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         _name= sharedPreferences.getString(NAME,"");
         _contact= sharedPreferences.getString(CONTACT,"");
-        _address= sharedPreferences.getString(ADDRESS,"");
+        //_address= sharedPreferences.getString(ADDRESS,"");
         _email= sharedPreferences.getString(EMAIL,"");
     }
     public void updateViews(){
@@ -241,6 +238,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
                         Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Profile.this,
                         Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     //When Permission Granted
+                    getCurrentLocation();
                 } else {
                     //when permission is not granted
                     //req permission

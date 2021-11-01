@@ -57,11 +57,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView userAddress;
     String date, status;
     SharedPreferences sharedPreferences;
-    public String _contact1,_contact2;
+    public String _name,_contact,_address,_email,_contact1,_contact2,_lat,_lng;
 
     public static final String SHARED_PREFS= "sharedPrefs";
     public static final String CONTACT1="contact1";
     public static final String CONTACT2="contact2";
+    public static final String NAME= "name";
+    public static final String CONTACT= "contact";
 
 
     Double lat,lng;
@@ -117,7 +119,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 builder.show();
             }
         });
-
+        loadData();
+        updateViews();
 
     }
 
@@ -247,6 +250,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         _contact1= sharedPreferences.getString(CONTACT1,"");
         _contact2= sharedPreferences.getString(CONTACT2,"");
-
+        _name= sharedPreferences.getString(NAME,"");
+        _contact= sharedPreferences.getString(CONTACT,"");
+    }
+    public void updateViews() {
+        userName.getEditText().setText(_name);
+        userContact.getEditText().setText("+63" + _contact);
     }
 }

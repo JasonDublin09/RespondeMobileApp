@@ -61,6 +61,7 @@ public class Contacts extends AppCompatActivity {
                     editor.apply();
                     loadData();
                     updateViews();
+                    toast();
                 }
             }
 
@@ -173,7 +174,6 @@ public class Contacts extends AppCompatActivity {
             return true;
         }
     }
-
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         _name1= sharedPreferences.getString(EMCONTACTNAME1,"");
@@ -187,7 +187,8 @@ public class Contacts extends AppCompatActivity {
         contact1.getEditText().setText(_contact1);
         name2.getEditText().setText(_name2);
         contact2.getEditText().setText(_contact2);
+    }
+    public void toast(){
         Toast.makeText(this,"Your information has been updated",Toast.LENGTH_SHORT).show();
     }
-
 }
