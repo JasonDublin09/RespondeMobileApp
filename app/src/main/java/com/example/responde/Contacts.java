@@ -191,4 +191,5 @@ public class Contacts extends AppCompatActivity {
     public void toast(){
         Toast.makeText(this,"Your information has been updated",Toast.LENGTH_SHORT).show();
     }
+
 }

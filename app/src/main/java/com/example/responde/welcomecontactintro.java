@@ -100,7 +100,7 @@ public class welcomecontactintro extends AppCompatActivity {
             contact1.setError("No white spaces");
             return false;
         }
-        else if (valContact1.length() >= 50 || valContact1.length() < 11){
+        else if (valContact1.length() >= 50 || valContact1.length() < 10){
             contact1.setError("Invalid Contact number");
             return false;
         }
@@ -122,7 +122,7 @@ public class welcomecontactintro extends AppCompatActivity {
             contact2.setError("No white spaces");
             return false;
         }
-        else if (valContact2.length() >= 50 || valContact2.length() < 11){
+        else if (valContact2.length() >= 50 || valContact2.length() < 10){
             contact2.setError("Invalid Contact number");
             return false;
         }
