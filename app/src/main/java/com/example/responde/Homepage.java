@@ -86,7 +86,7 @@ private Button shortcut_btn,splashscreen_btn;
     }
 
     public void my_location(){
-        Intent intent = new Intent(this, welcomepage.class);
+        Intent intent = new Intent(this, welcomecontactintro.class);
         startActivity(intent);
     }
 

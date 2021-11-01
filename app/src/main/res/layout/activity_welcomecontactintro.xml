@@ -12,7 +12,9 @@
         android:id="@+id/name1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp">
+        android:layout_marginTop="150dp"
+        app:startIconDrawable="@drawable/ic_profile"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -27,14 +29,21 @@
         android:id="@+id/contact1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp">
+        android:layout_marginTop="220dp"
+        app:startIconDrawable="@drawable/ic_contacts"
+        app:prefixText="+63"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Contact number" />
+            android:hint="Contact number"
+
+            android:inputType="number"
+
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -43,7 +52,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="320dp">
+        android:layout_marginTop="320dp"
+        app:startIconDrawable="@drawable/ic_profile"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -59,7 +70,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp">
+        android:layout_marginTop="400dp"
+        app:startIconDrawable="@drawable/ic_contacts"
+        app:prefixText="+63"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -67,7 +81,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Contact number" />
+            android:hint="Contact number"
+            android:inputType="number"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView

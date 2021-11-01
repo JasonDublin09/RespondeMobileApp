@@ -198,7 +198,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void updatebutton() {
-        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
+
         SharedPreferences.Editor editor= sharedPreferences.edit();
 
         editor.putString(NAME, name.getEditText().getText().toString());
@@ -210,7 +210,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         editor.apply();
         loadData();
         updateViews();
-        Toast.makeText(this,"Data Saved",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Profile Updated",Toast.LENGTH_SHORT).show();
 
     }
     public void loadData(){
@@ -233,7 +233,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
                 updatebutton();
                 break;
             case R.id.getlcn:
-                Toast.makeText(getApplicationContext(),"Test", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Fetching Location", Toast.LENGTH_SHORT).show();
                 if (ActivityCompat.checkSelfPermission(Profile.this,
                         Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(Profile.this,
                         Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
