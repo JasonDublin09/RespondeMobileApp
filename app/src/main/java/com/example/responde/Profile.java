@@ -45,8 +45,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
 
 
     TextInputLayout name,contact,email, address1;
-    private TextView address;
-    public String _name,_contact,_address,_email;
+    public TextView address;
+    public String _name,_contact,_address,_email,_lat,_lng;
     SharedPreferences sharedPreferences;
     FusedLocationProviderClient fusedLocationProviderClient;
     Double lat, lng;
@@ -205,11 +205,10 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         editor.putString(CONTACT, contact.getEditText().getText().toString());
         editor.putString(ADDRESS, address.getText().toString());
         editor.putString(EMAIL,email.getEditText().getText().toString());
-        editor.putString(LAT,lat.toString());
-        editor.putString(LNG,lng.toString());
+        editor.putString(LAT,_lat);
+        editor.putString(LNG,_lng);
         editor.apply();
-        loadData();
-        updateViews();
+
         Toast.makeText(this,"Profile Updated",Toast.LENGTH_SHORT).show();
 
     }
@@ -219,6 +218,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         _contact= sharedPreferences.getString(CONTACT,"");
         _address= sharedPreferences.getString(ADDRESS,"");
         _email= sharedPreferences.getString(EMAIL,"");
+        _lat = sharedPreferences.getString(LAT,"");
+        _lng = sharedPreferences.getString(LNG,"");
     }
     public void updateViews(){
         name.getEditText().setText(_name);
