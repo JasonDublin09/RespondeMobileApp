@@ -78,9 +78,9 @@ public class welcomecontactintro extends AppCompatActivity {
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         _name1= sharedPreferences.getString(EMCONTACTNAME1,"");
-        _contact1= sharedPreferences.getString(CONTACT1,"");
+        _contact1= sharedPreferences.getString("+63" + CONTACT1,"");
         _name2= sharedPreferences.getString(EMCONTACTNAME2,"");
-        _contact2= sharedPreferences.getString(CONTACT2,"");
+        _contact2= sharedPreferences.getString("+63" + CONTACT2,"");
     }
     public void updateViews(){
         name1.getEditText().setText(_name1);

@@ -66,6 +66,7 @@ public class Contacts extends AppCompatActivity {
             }
 
         });
+        contact63();
         //Initialize and assign variables
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
         //Set Tab selected
@@ -190,6 +191,10 @@ public class Contacts extends AppCompatActivity {
     }
     public void toast(){
         Toast.makeText(this,"Your information has been updated",Toast.LENGTH_SHORT).show();
+    }
+    public void contact63(){
+        contact1.getEditText().setText(63 + _contact1);
+        contact2.getEditText().setText( 63 + _contact2);
     }
 
 }

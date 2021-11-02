@@ -53,12 +53,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        app:counterEnabled="true"
-        app:counterMaxLength="10"
-        app:helperText="Example: 9211098876"
         app:helperTextTextColor="@color/black"
-        app:prefixText="+63"
         app:prefixTextColor="@color/black"
+        app:prefixText="+63"
         app:startIconDrawable="@drawable/ic_contacts">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -96,12 +93,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="300dp"
-        app:counterEnabled="true"
-        app:counterMaxLength="10"
-        app:helperText="Example: 9211098876"
         app:helperTextTextColor="@color/black"
-        app:prefixText="+63"
         app:prefixTextColor="@color/black"
+        app:prefixText="+63"
         app:startIconDrawable="@drawable/ic_contacts">
 
         <com.google.android.material.textfield.TextInputEditText
