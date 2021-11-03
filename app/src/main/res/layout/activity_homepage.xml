@@ -59,14 +59,15 @@
         android:layout_height="62dp"
         android:layout_above="@+id/bottomnavigation"
         android:layout_alignParentStart="true"
-
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="16dp"
         android:src="@drawable/ic_my_location_btn"
         app:layout_constraintBottom_toTopOf="@+id/bottomnavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigation"

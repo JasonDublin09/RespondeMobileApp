@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         app:startIconDrawable="@drawable/ic_contacts"
+        app:prefixText="+63"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -42,6 +43,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:baselineAligned="false"
+            app:prefixText="+63"
             android:hint="Contact" />
     </com.google.android.material.textfield.TextInputLayout>
 
