@@ -106,8 +106,9 @@
         android:id="@+id/contactBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="250dp"
         android:layout_marginTop="480dp"
-        android:layout_centerHorizontal="true"
-        android:text="Confirm" />
+        android:text="Confirm"
+        app:backgroundTint="#8F1048" />
 </RelativeLayout>

@@ -88,7 +88,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="370dp"
-        android:text="Get Location" />
+        android:text="Get Location"
+        app:backgroundTint="#9E7C17" />
 
     <Button
         android:id="@+id/updateBtn"
@@ -96,7 +97,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="425dp"
-        android:text="Update" />
+        android:text="Update"
+        app:backgroundTint="#8F1048" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

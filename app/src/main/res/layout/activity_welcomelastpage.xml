@@ -23,8 +23,9 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
         android:layout_centerHorizontal="true"
-        android:text="lezzgooo" />
+        android:layout_marginTop="500dp"
+        android:text="Proceed To Homepage"
+        app:backgroundTint="#8F1048" />
 
 </RelativeLayout>

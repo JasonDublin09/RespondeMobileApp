@@ -16,7 +16,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="51dp"
         android:layout_marginBottom="129dp"
-        android:text="Update" />
+        android:text="Update"
+        app:backgroundTint="#8F1048" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigation"
