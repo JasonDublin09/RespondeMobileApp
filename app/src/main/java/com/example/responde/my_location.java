@@ -70,8 +70,8 @@ public class my_location extends AppCompatActivity {
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("IncomingReport");
 
-                String y = _contact1;
-                String z = _contact2;
+                String y = "+63"+_contact1;
+                String z = "+63"+_contact2;
                 String[] x= {y,z};
                 List<String> tag= Arrays.asList(x);
 

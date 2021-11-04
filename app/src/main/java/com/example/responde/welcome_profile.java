@@ -119,14 +119,9 @@ public class welcome_profile extends AppCompatActivity {
     public Boolean validateEmail() {
         String valEmail = email.getEditText().getText().toString();
         String noWhiteSpaces = "\\A\\w{4,20}\\z";
-        String emailPattern = "[a-zA-Z0-9]+@[a-z]+\\.+[a-z]+";
 
         if (valEmail.isEmpty()) {
             email.setError("Field cannot be empty");
-            return false;
-        }
-        else if (!valEmail.matches(emailPattern)) {
-            email.setError("Invalid Email address");
             return false;
         }
         else if (valEmail.matches(noWhiteSpaces)) {

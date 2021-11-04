@@ -79,6 +79,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         address = findViewById(R.id.addressedit);
         address1 = findViewById(R.id.address);
 
+        button1.setEnabled(false);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
 
@@ -113,6 +114,63 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         updateViews();
     }
 
+    public Boolean validation() {
+        String valName = name.getEditText().getText().toString();
+
+        if (valName.isEmpty()) {
+            name.setError("Field cannot be empty");
+            return false;
+        }
+        else if (valName.length() >= 50) {
+            name.setError("Username is too long");
+            return false;
+        }
+        else {
+            name.setError(null);
+            name.setErrorEnabled(false);
+            return true;
+        }
+    }
+    public Boolean validateContact() {
+        String valContact = contact.getEditText().getText().toString();
+        String noWhiteSpaces = "\\A\\w{4,20}\\z";
+
+        if (valContact.isEmpty()) {
+            contact.setError("Field cannot be empty");
+            return false;
+        }
+        else if (!valContact.matches(noWhiteSpaces)) {
+            contact.setError("No white spaces");
+            return false;
+        }
+        else if (valContact.length() >= 50 || valContact.length() < 10){
+            contact.setError("Invalid Contact number");
+            return false;
+        }
+        else {
+            contact.setError(null);
+            contact.setErrorEnabled(false);
+            return true;
+        }
+    }
+    public Boolean validateEmail() {
+        String valEmail = email.getEditText().getText().toString();
+        String noWhiteSpaces = "\\A\\w{4,20}\\z";
+
+        if (valEmail.isEmpty()) {
+            email.setError("Field cannot be empty");
+            return false;
+        }
+        else if (valEmail.matches(noWhiteSpaces)) {
+            email.setError("Invalid Email address");
+            return false;
+        }
+        else {
+            email.setError(null);
+            email.setErrorEnabled(false);
+            return true;
+        }
+    }
     @SuppressLint("MissingPermission")
     private void getCurrentLocation() {
         //ini location manager
@@ -231,7 +289,15 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v){
         switch (v.getId()){
             case R.id.updateBtn:
-                updatebutton();
+                validation();
+                validateContact();
+                validateEmail();
+                if (!validation()  | !validateEmail() | !validateContact()) {
+                    return;
+                }
+                else {
+                    updatebutton();
+                }
                 break;
             case R.id.getlcn:
                 Toast.makeText(getApplicationContext(),"Fetching Location", Toast.LENGTH_SHORT).show();
@@ -240,6 +306,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
                         Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     //When Permission Granted
                     getCurrentLocation();
+                    button1.setEnabled(true);
                 } else {
                     //when permission is not granted
                     //req permission

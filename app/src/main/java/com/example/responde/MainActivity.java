@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gpslocator = findViewById(R.id.gps_locator);
         sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
 
+        confirmBtn.setEnabled(false);
         //Firebase confirm button
         confirmBtn.setOnClickListener(this);
         gpslocator.setOnClickListener(this);
@@ -105,43 +106,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("IncomingReport");
 
-                //get all the value
-                String name = userName.getEditText().getText().toString();
-                String contact = userContact.getEditText().getText().toString();
-                String address = userAddress.getText().toString();
-                String email = "@aaa";
-                String option = "OTHER LOCATION";
-                String status = "";
-                String y = "+63"+_contact1;
-                String z = "+63"+_contact2;
-                String[] x= {y,z};
-                List<String> tag= Arrays.asList(x);
+                    //get all the value
+                    String name = userName.getEditText().getText().toString();
+                    String contact = userContact.getEditText().getText().toString();
+                    String address = userAddress.getText().toString();
+                    String email = "@aaa";
+                    String option = "OTHER LOCATION";
+                    String status = "";
+                    String y = "+63"+_contact1;
+                    String z = "+63"+_contact2;
+                    String[] x = {y, z};
+                    List<String> tag = Arrays.asList(x);
 
-                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,option,date,status/*, (ArrayList<String>) tag*/, tag);
-                reference.push().setValue(helperClass);
-                Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
+                    UserHelperClass helperClass = new UserHelperClass(name, contact, email, address, lat, lng, option, date, status/*, (ArrayList<String>) tag*/, tag);
+                    reference.push().setValue(helperClass);
+                    Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
 
-                        //para sa popup modal
-                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                        //properties of the alertdialog
-                        builder.setCancelable(true);
-                        builder.setTitle("RESPONDE says: ");
-                        builder.setMessage("Report has been sent!");
-                        //builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        // @Override
-                        // public void onClick(DialogInterface dialogInterface, int i) {
-                        //     dialogInterface.cancel();
-                        // }
-                        // });
-                        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                popupmodal.setVisibility(View.VISIBLE);
-                            }
-                        });
+                    //para sa popup modal
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    //properties of the alertdialog
+                    builder.setCancelable(true);
+                    builder.setTitle("RESPONDE says: ");
+                    builder.setMessage("Report has been sent!");
+                    //builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    // @Override
+                    // public void onClick(DialogInterface dialogInterface, int i) {
+                    //     dialogInterface.cancel();
+                    // }
+                    // });
+                    builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            popupmodal.setVisibility(View.VISIBLE);
+                        }
+                    });
 
-                        builder.show();
-
+                    builder.show();
 
                 break;
             case R.id.gps_locator:
@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     //When Permission Granted
                     getCurrentLocation();
+                    confirmBtn.setEnabled(true);
                 } else {
                     //when permission is not granted
                     //req permission
