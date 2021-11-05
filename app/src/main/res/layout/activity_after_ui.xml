@@ -45,16 +45,26 @@
         android:layout_below="@+id/whattodoholder"
         android:layout_centerHorizontal="true"
         android:background="@drawable/whattodo_after_bg"
+
+
         >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/milkynice"
+
             android:text="@string/whattodoafter_string"
             android:textAlignment="gravity"
             android:textColor="@color/white"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+
+            android:letterSpacing="0.1"
+            android:lineSpacingExtra="11dp"
+            />
     </ScrollView>
 </RelativeLayout>

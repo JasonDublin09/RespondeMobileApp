@@ -37,7 +37,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
-        app:startIconDrawable="@drawable/ic_person">
+        app:startIconDrawable="@drawable/ic_person"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -57,7 +62,12 @@
         app:helperTextTextColor="@color/black"
         app:prefixTextColor="@color/black"
         app:prefixText="+63"
-        app:startIconDrawable="@drawable/ic_contacts">
+        app:startIconDrawable="@drawable/ic_contacts"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -76,7 +86,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="225dp"
         android:orientation="vertical"
-        app:startIconDrawable="@drawable/ic_person">
+        app:startIconDrawable="@drawable/ic_person"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -85,7 +100,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:baselineAligned="false"
-            android:hint="Name" />
+            android:hint="Name"
+
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -97,7 +114,12 @@
         app:helperTextTextColor="@color/black"
         app:prefixTextColor="@color/black"
         app:prefixText="+63"
-        app:startIconDrawable="@drawable/ic_contacts">
+        app:startIconDrawable="@drawable/ic_contacts"
+
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopStart="8dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"

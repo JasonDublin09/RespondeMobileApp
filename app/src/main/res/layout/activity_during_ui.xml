@@ -28,10 +28,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:text="What to do after a fire?"
         android:fontFamily="@font/milkynice"
-        android:textSize="30dp"
-        />
+        android:text="What to do during a fire?"
+        android:textSize="30dp" />
     <LinearLayout
         android:id="@+id/whattodoholder"
         android:layout_marginTop="130dp"
@@ -51,11 +50,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/milkynice"
+
             android:text="@string/whattododuring_string"
             android:textAlignment="gravity"
             android:textColor="@color/white"
-
+            android:letterSpacing="0.1"
+            android:lineSpacingExtra="11dp"
             android:textSize="20dp" />
 
     </ScrollView>

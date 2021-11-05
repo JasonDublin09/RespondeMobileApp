@@ -26,11 +26,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:text="What to do after a fire?"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/milkynice"
-        android:textSize="30dp"
-        />
+        android:text="What to do before a fire?"
+        android:textSize="25dp" />
     <LinearLayout
         android:id="@+id/whattodoholder"
         android:layout_marginTop="130dp"
@@ -51,12 +50,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/milkynice"
+
             android:text="@string/whattodobefore_string"
             android:textAlignment="gravity"
             android:textColor="@color/white"
+            android:textSize="20dp"
+            android:letterSpacing="0.1"
+            android:lineSpacingExtra="11dp"
 
-            android:textSize="20dp" />
+
+            />
 
 
     </ScrollView>
