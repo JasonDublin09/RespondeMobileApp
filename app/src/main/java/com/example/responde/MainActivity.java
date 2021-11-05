@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String CONTACT1="contact1";
     public static final String CONTACT2="contact2";
     public static final String NAME= "name";
+    public static final String EMAIL="email";
     public static final String CONTACT= "contact";
 
 
@@ -249,10 +250,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         _contact1= sharedPreferences.getString(CONTACT1,"");
         _contact2= sharedPreferences.getString(CONTACT2,"");
         _name= sharedPreferences.getString(NAME,"");
+        _email= sharedPreferences.getString(EMAIL,"");
         _contact= sharedPreferences.getString(CONTACT,"");
     }
     public void updateViews() {
         userName.getEditText().setText(_name);
         userContact.getEditText().setText("+63" + _contact);
+        userEmail.getEditText().setText(_email);
     }
 }

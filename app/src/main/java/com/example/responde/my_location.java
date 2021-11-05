@@ -25,7 +25,7 @@ import java.util.List;
 public class my_location extends AppCompatActivity {
 
     TextView popupmodal;
-    TextInputLayout userName, userContact;
+    TextInputLayout userName, userContact, userEmail;
     Button cancel_btn, confirmBtn;
     public String _name,_contact,_address,_email,_contact1,_contact2,_lat,_lng;
     SharedPreferences sharedPreferences;
@@ -55,6 +55,7 @@ public class my_location extends AppCompatActivity {
         popupmodal = findViewById(R.id.popupmylocation);
         userName = findViewById(R.id.name);
         userContact = findViewById(R.id.contactNum);
+        userEmail = findViewById(R.id.email);
         address = findViewById(R.id.address);
         confirmBtn = findViewById(R.id.confirm);
         cancel_btn = (Button) findViewById(R.id.cancel_btn);
@@ -129,14 +130,11 @@ public class my_location extends AppCompatActivity {
         Intent intent = new Intent(this, Homepage.class);
         startActivity(intent);
     }
-
-
     public void toastMsg(String msg) {
 
         Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
         toast.show();
     }
-
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         _name= sharedPreferences.getString(NAME,"");
@@ -151,6 +149,7 @@ public class my_location extends AppCompatActivity {
     public void updateViews(){
         userName.getEditText().setText(_name);
         userContact.getEditText().setText("+63"+_contact);
+        userEmail.getEditText().setText(_email);
         address.setText(_address);
     }
 
