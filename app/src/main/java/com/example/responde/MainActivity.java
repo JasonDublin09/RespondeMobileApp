@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String name = userName.getEditText().getText().toString();
                     String contact = userContact.getEditText().getText().toString();
                     String address = userAddress.getText().toString();
-                    String email = "@aaa";
+                    String email = _email;
                     String option = "OTHER LOCATION";
                     String status = "";
                     String y = "+63"+_contact1;

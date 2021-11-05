@@ -22,9 +22,9 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-public class my_location extends AppCompatActivity {
+public class my_location extends AppCompatActivity implements View.OnClickListener{
 
-    TextView popupmodal;
+    TextView popupmodal,userAddress;
     TextInputLayout userName, userContact, userEmail;
     Button cancel_btn, confirmBtn;
     public String _name,_contact,_address,_email,_contact1,_contact2,_lat,_lng;
@@ -34,7 +34,7 @@ public class my_location extends AppCompatActivity {
 
     Double lat,lng;
     String date;
-    TextView address;
+//    TextView address;
 
 
     public static final String SHARED_PREFS= "sharedPrefs";
@@ -56,7 +56,7 @@ public class my_location extends AppCompatActivity {
         userName = findViewById(R.id.name);
         userContact = findViewById(R.id.contactNum);
         userEmail = findViewById(R.id.email);
-        address = findViewById(R.id.address);
+        userAddress = findViewById(R.id.address);
         confirmBtn = findViewById(R.id.confirm);
         cancel_btn = (Button) findViewById(R.id.cancel_btn);
         sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
@@ -65,62 +65,66 @@ public class my_location extends AppCompatActivity {
         SimpleDateFormat dateformat = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
         date= dateformat.format(calendar.getTime());
 
-        confirmBtn.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("IncomingReport");
+        confirmBtn.setOnClickListener(this);
+        cancel_btn.setOnClickListener(this);
 
-                String y = "+63"+_contact1;
-                String z = "+63"+_contact2;
-                String[] x= {y,z};
-                List<String> tag= Arrays.asList(x);
-
-                String option = "HOME";
-                String status = "";
-                String name = _name;
-                String contact= _contact;
-                String email = _email;
-                String address = _address;
-
-                lat= Double.parseDouble(_lat);
-                lng = Double.parseDouble(_lng);
-
-
-                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,option,date,status/*, (ArrayList<String>) tag*/, tag);
-                reference.push().setValue(helperClass);
-                Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
-
-                //para sa popup modal
-                AlertDialog.Builder builder = new AlertDialog.Builder(my_location.this);
-                //properties of the alertdialog
-                builder.setCancelable(true);
-                builder.setTitle("RESPONDE says: ");
-                builder.setMessage("Report has been sent!");
-                //builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                   // @Override
-                   // public void onClick(DialogInterface dialogInterface, int i) {
-                   //     dialogInterface.cancel();
-                   // }
-               // });
-                builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        popupmodal.setVisibility(View.VISIBLE);
-                    }
-                });
-
-                builder.show();
-
-            }
-
-        }));
-        cancel_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openHomepage();
-            }
-        });
+//        confirmBtn.setOnClickListener((new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                rootNode = FirebaseDatabase.getInstance();
+//                reference = rootNode.getReference("IncomingReport");
+//                sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+//
+//                String y = "+63"+_contact1;
+//                String z = "+63"+_contact2;
+//                String[] x= {y,z};
+//                List<String> tag= Arrays.asList(x);
+//
+//                String option = "HOME";
+//                String status = "";
+//                String name = _name;
+//                String contact= _contact;
+//                String email = _email;
+//                String address = _address;
+//
+//                lat= Double.parseDouble(_lat);
+//                lng = Double.parseDouble(_lng);
+//
+//
+//                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address,lat,lng,option,date,status/*, (ArrayList<String>) tag*/, tag);
+//                reference.push().setValue(helperClass);
+//                Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
+//
+//                //para sa popup modal
+//                AlertDialog.Builder builder = new AlertDialog.Builder(my_location.this);
+//                //properties of the alertdialog
+//                builder.setCancelable(true);
+//                builder.setTitle("RESPONDE says: ");
+//                builder.setMessage("Report has been sent!");
+//                //builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                   // @Override
+//                   // public void onClick(DialogInterface dialogInterface, int i) {
+//                   //     dialogInterface.cancel();
+//                   // }
+//               // });
+//                builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        popupmodal.setVisibility(View.VISIBLE);
+//                    }
+//                });
+//
+//                builder.show();
+//
+//            }
+//
+//        }));
+//        cancel_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openHomepage();
+//            }
+//        });
 
         loadData();
         updateViews();
@@ -150,11 +154,65 @@ public class my_location extends AppCompatActivity {
         userName.getEditText().setText(_name);
         userContact.getEditText().setText("+63"+_contact);
         userEmail.getEditText().setText(_email);
-        address.setText(_address);
+        userAddress.setText(_address);
     }
 
     public void displayToastMsg(View v) {
         toastMsg("Report Sent to the Fire District V");
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.confirm:
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("IncomingReport");
+
+                //get all the value
+                String name = userName.getEditText().getText().toString();
+                String contact = userContact.getEditText().getText().toString();
+                String address = userAddress.getText().toString();
+                String email = _email;
+                String option = "HOME";
+                String status = "";
+                String y = "+63"+_contact1;
+                String z = "+63"+_contact2;
+                String[] x = {y, z};
+                List<String> tag = Arrays.asList(x);
+
+                lat=Double.parseDouble(_lat);
+                lng=Double.parseDouble(_lng);
+
+                UserHelperClass helperClass = new UserHelperClass(name, contact, email, address, lat, lng, option, date, status/*, (ArrayList<String>) tag*/, tag);
+                reference.push().setValue(helperClass);
+                Toast.makeText(getApplicationContext(), "Request Sent", Toast.LENGTH_SHORT).show();
+
+                //para sa popup modal
+                AlertDialog.Builder builder = new AlertDialog.Builder(my_location.this);
+                //properties of the alertdialog
+                builder.setCancelable(true);
+                builder.setTitle("RESPONDE says: ");
+                builder.setMessage("Report has been sent!");
+                //builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                   // @Override
+                   // public void onClick(DialogInterface dialogInterface, int i) {
+                   //     dialogInterface.cancel();
+                   // }
+               // });
+                builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        popupmodal.setVisibility(View.VISIBLE);
+                    }
+                });
+
+                builder.show();
+
+                break;
+
+            case R.id.cancel_btn:
+                openHomepage();
+                break;
+        }
+    }
 }

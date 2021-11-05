@@ -263,8 +263,8 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         editor.putString(CONTACT, contact.getEditText().getText().toString());
         editor.putString(ADDRESS, address.getText().toString());
         editor.putString(EMAIL,email.getEditText().getText().toString());
-        editor.putString(LAT,_lat);
-        editor.putString(LNG,_lng);
+        editor.putString(LAT,lat.toString());
+        editor.putString(LNG,lng.toString());
         editor.apply();
 
         Toast.makeText(this,"Profile Updated",Toast.LENGTH_SHORT).show();
