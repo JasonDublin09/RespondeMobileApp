@@ -30,7 +30,7 @@
         android:layout_marginTop="70dp"
         android:fontFamily="@font/milkynice"
         android:text="What to do during a fire?"
-        android:textSize="30dp" />
+        android:textSize="25dp" />
     <LinearLayout
         android:id="@+id/whattodoholder"
         android:layout_marginTop="130dp"

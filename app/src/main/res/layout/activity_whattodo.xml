@@ -74,12 +74,25 @@
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:background="@drawable/trial"
-        app:layout_constraintBottom_toTopOf="@+id/after"
-        app:layout_constraintStart_toStartOf="@+id/after"
+        app:layout_constraintBottom_toTopOf="@+id/during"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/during"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="@drawable/whattodo_during_btn"
+        app:layout_constraintBottom_toTopOf="@+id/after"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/before" />
+
+    <ImageButton
+        android:id="@+id/after"
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:background="@drawable/whattodo_after_btn"
@@ -87,16 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/after" />
-
-    <ImageButton
-        android:id="@+id/after"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:background="@drawable/whattodo_during_btn"
-        app:layout_constraintBottom_toTopOf="@+id/during"
-        app:layout_constraintStart_toStartOf="@+id/during"
-        app:layout_constraintTop_toBottomOf="@+id/before" />
+        app:layout_constraintTop_toBottomOf="@+id/during" />
 
     <androidx.constraintlayout.widget.Barrier
         android:layout_width="wrap_content"
