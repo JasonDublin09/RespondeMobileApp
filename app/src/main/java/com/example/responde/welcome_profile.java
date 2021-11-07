@@ -27,7 +27,6 @@ public class welcome_profile extends AppCompatActivity {
 
     TextInputLayout name, contact, email, address;
     CheckBox termsAndAgreement;
-    TextView ta;
     Button confirm;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -52,7 +51,6 @@ public class welcome_profile extends AppCompatActivity {
         address = findViewById(R.id.address);
         email = findViewById(R.id.email);
         confirm = findViewById(R.id.save);
-        ta = findViewById(R.id.tAnda);
         termsAndAgreement = findViewById(R.id.checkbox);
 
         sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
@@ -62,10 +60,10 @@ public class welcome_profile extends AppCompatActivity {
             public void onClick(View view) {
                 validation();
                 validateEmail();
-                validateAddress();
+
                 validateContact();
 
-                if (!validation()  | !validateEmail() | !validateAddress() | !validateContact()) {
+                if (!validation()  | !validateEmail() | !validateContact()) {
                     return;
                 }
 
@@ -131,19 +129,6 @@ public class welcome_profile extends AppCompatActivity {
         else {
             email.setError(null);
             email.setErrorEnabled(false);
-            return true;
-        }
-    }
-    public Boolean validateAddress() {
-        String valAddress = address.getEditText().getText().toString();
-
-        if (valAddress.isEmpty()) {
-            address.setError("Field cannot be empty");
-            return false;
-        }
-        else {
-            address.setError(null);
-            address.setErrorEnabled(false);
             return true;
         }
     }

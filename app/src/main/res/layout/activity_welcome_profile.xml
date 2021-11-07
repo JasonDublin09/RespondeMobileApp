@@ -15,7 +15,7 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="100dp"
         android:hint="Name"
         android:capitalize="words"
         android:layout_gravity="center_horizontal"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/gradient"
         android:hint="Contact"
@@ -70,7 +70,7 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="320dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:background="@drawable/gradient"
         android:layout_marginLeft="20dp"
@@ -91,31 +91,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="325dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:background="@drawable/gradient"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_gravity="center_horizontal"
-        android:hint="Home Address"
-        app:startIconDrawable="@drawable/ic_home"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            >
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/addressedit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
-        </com.google.android.material.textfield.TextInputLayout>
-
     <Button
         android:id="@+id/save"
         android:layout_width="wrap_content"
@@ -125,22 +100,5 @@
         android:text="Confirm"
         app:backgroundTint="#8F1048" />
 
-
-    <CheckBox
-        android:id="@+id/checkbox"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/address"
-        android:layout_marginLeft="20dp" />
-
-    <TextView
-        android:id="@+id/tAnda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/checkbox"
-        android:layout_below="@+id/address"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/white"
-        android:text="Terms and Agreement" />
 
 </RelativeLayout>
