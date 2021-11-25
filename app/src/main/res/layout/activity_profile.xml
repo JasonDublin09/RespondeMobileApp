@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/general_bg"
+    android:background="@color/bg_color"
     tools:context=".Profile">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -73,13 +73,17 @@
         android:layout_marginTop="300dp"
         android:layout_marginRight="5dp"
         android:text="Address:"
+        android:fontFamily="@font/subscript"
+        android:textColor="@color/white"
         android:textSize="15dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/address"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp" />
+        android:layout_marginTop="340dp"
+        android:textColorHint="@color/white"
+        />
 
 
     <Button
@@ -89,7 +93,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="370dp"
         android:text="Get Location"
-        app:backgroundTint="#9E7C17" />
+        app:backgroundTint="#D5C758" />
 
     <Button
         android:id="@+id/updateBtn"
@@ -98,7 +102,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="425dp"
         android:text="Update"
-        app:backgroundTint="#8F1048" />
+        android:textColor="@color/white"
+        app:backgroundTint="#B12A1E" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

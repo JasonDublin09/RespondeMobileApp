@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/general_bg"
+    android:background="@color/bg_color"
     tools:context=".During_UI">
 
 
@@ -28,8 +28,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:fontFamily="@font/milkynice"
         android:text="What to do during a fire?"
+        android:fontFamily="@font/generalfont"
+        android:textColor="@color/white"
         android:textSize="25dp" />
     <LinearLayout
         android:id="@+id/whattodoholder"
@@ -50,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-
+            android:fontFamily="@font/subscript"
             android:text="@string/whattododuring_string"
             android:textAlignment="gravity"
             android:textColor="@color/white"

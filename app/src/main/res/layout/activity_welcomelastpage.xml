@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/general_bg"
+    android:background="@color/bg_color"
     tools:context=".welcomelastpage">
 
 
@@ -16,8 +16,11 @@
         android:layout_gravity="center_horizontal|center_vertical"
         android:text="We are all set!"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="50dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/generalfont"
+        />
 
     <Button
         android:id="@+id/button"

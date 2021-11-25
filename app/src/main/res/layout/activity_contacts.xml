@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/general_bg"
+    android:background="@color/bg_color"
     tools:context=".Contacts">
 
     <Button
@@ -17,7 +17,7 @@
         android:layout_marginEnd="51dp"
         android:layout_marginBottom="129dp"
         android:text="Update"
-        app:backgroundTint="#8F1048" />
+        app:backgroundTint="#B12A1E" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigation"

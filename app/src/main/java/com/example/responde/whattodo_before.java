@@ -12,7 +12,7 @@ public class whattodo_before extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_whattodo_before);
+
 
 
 

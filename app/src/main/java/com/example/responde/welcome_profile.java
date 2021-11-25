@@ -52,7 +52,7 @@ public class welcome_profile extends AppCompatActivity {
         address = findViewById(R.id.address);
         email = findViewById(R.id.email);
         confirm = findViewById(R.id.save);
-        ta = findViewById(R.id.tAnda);
+
         termsAndAgreement = findViewById(R.id.checkbox);
 
         sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);

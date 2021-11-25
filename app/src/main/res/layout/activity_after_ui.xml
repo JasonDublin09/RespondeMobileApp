@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/general_bg"
+    android:background="@color/bg_color"
     tools:context=".after_UI">
 
 
@@ -28,10 +28,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
+        android:fontFamily="@font/generalfont"
         android:text="What to do after a fire?"
-        android:fontFamily="@font/milkynice"
-        android:textSize="30dp"
-        />
+        android:textColor="@color/white"
+        android:textSize="30dp" />
     <LinearLayout
         android:id="@+id/whattodoholder"
         android:layout_marginTop="130dp"
@@ -53,18 +53,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-
+            android:letterSpacing="0.1"
+            android:lineSpacingExtra="11dp"
             android:text="@string/whattodoafter_string"
             android:textAlignment="gravity"
             android:textColor="@color/white"
+            android:fontFamily="@font/subscript"
             android:textSize="20dp"
             app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
             app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-
-            android:letterSpacing="0.1"
-            android:lineSpacingExtra="11dp"
-            />
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp" />
     </ScrollView>
 </RelativeLayout>

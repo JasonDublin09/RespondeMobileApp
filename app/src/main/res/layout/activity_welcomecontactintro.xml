@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/general_bg"
+    android:background="@color/bg_color"
     tools:context=".welcomecontactintro">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -112,13 +112,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
         android:layout_marginStart="6dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="-1dp"
-        android:fontFamily="@font/milkynice"
         android:text="The purpose of this contact list is to immediatly notify the people in your contact list that you are in an emergency related to a fire incident."
-        android:textSize="20dp" />
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="italic" />
 
     <Button
         android:id="@+id/contactBtn"

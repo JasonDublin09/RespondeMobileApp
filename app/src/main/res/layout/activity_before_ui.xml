@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/general_bg"
+    android:background="@color/bg_color"
     tools:context=".beforeUI">
 
     <Button
@@ -27,8 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:fontFamily="@font/milkynice"
         android:text="What to do before a fire?"
+        android:textColor="@color/white"
+        android:fontFamily="@font/generalfont"
         android:textSize="25dp" />
     <LinearLayout
         android:id="@+id/whattodoholder"
@@ -50,13 +51,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-
+            android:fontFamily="@font/subscript"
+            android:letterSpacing="0.1"
+            android:lineSpacingExtra="11dp"
             android:text="@string/whattodobefore_string"
             android:textAlignment="gravity"
             android:textColor="@color/white"
             android:textSize="20dp"
-            android:letterSpacing="0.1"
-            android:lineSpacingExtra="11dp"
 
 
             />
